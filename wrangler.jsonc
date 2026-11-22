@@ -2,7 +2,6 @@
   "$schema": "https://developers.cloudflare.com/workers/wrangler/configuration.schema.json",
   "name": "flight-board",
   "compatibility_date": "2025-01-01",
-  "pages_build_output_dir": "./public",
   "d1_databases": [
     {
       "binding": "DB",
