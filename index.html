@@ -1,0 +1,3794 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<!-- board-rev 97 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#386d75">
+<meta name="application-name" content="專用航班板">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="專用航班板">
+<link rel="icon" type="image/png" sizes="192x192" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAEjElEQVR4nO3dXXLTQBCFUUPxDruAhcCq2QjLYAfwkFBRhH9ke6SZnnvOG1AFitSfWnZC8uHz1+9/ThDqY+8DgJ4EQDQBEE0ARBMA0QRANAEQTQBEEwDRBEA0ARBNAEQTANEEQDQBEE0ARBMA0QRANAEQTQBEEwDRBEA0ARBNAEQTANEEQDQBEE0ARBMA0QRANAEQTQCd/f71s/chRBMA0QTQ0b+7vy3QjwCIJgCiCaCT9WOPx6A+BEA0AXTgbj8OAQxEGMcTANEEcDB3+bEIYDACOZYAiCaAA7m7j0cAAxLKcQRwEEM9JgEQTQCDsjGOIYADGOZxCYBoAhiYzbE/AezMEI/tU+8DSPXl2493vxZKHzbAji4N9Xr4L/3etb+DNgRwsEuDfuvP2IcAdtLyzv3710+bYCcCaGzPYRVBewJo6IgBtQ3a+vD56/c/vQ+iunsHstULXq8ZnieAJz16N275NqgQHieAB432GCKCxwjgAaMN/5IQ7iOAO4w8+Esi2E4AG1UZ/iUh3CaAGyoO/pIIrhPAFdWHf0kI5wngjJkGf0kE/xPAyqzDvySENwJ4lTD4SyJ4IYBT3vAvpYcQHUDy4K+lhhD71aCG/73U8xG3AVIv9D2StkHUBjD82ySdp4gNkHRBW5t9G0y/AQz/c2Y/f9NugNkvXA8zboMpN4Dh38eM53WqDTDjBRrVLNtgmg1g+I81y/kuvwFmuRCVVd4GpTeA4R9D5etQcgNUPuGzq7YNym0Awz+2atenzAaodmKpsQ3KbQBoSQBEEwDRBEA0ARBNAEQTANH8nOA7XXtv+6jPVYxwDLMQwEqFT95cs+X4RfImKoDqw93KrfOQFMhUAfQe8C/ffkwxPElbpFQAvQd8BKOcg1m2SJl3gUa58GxT5XqVCQD2IACiCYBoAiCaAIgmgMaqvPvBCwEQTQBEE0AhHq/aEwDRBEA0ARBNADvwrF6HAIgmAKIJgGgCIJoAiCaAIryztA8BEE0AO3HHrkEARBMA0QRANAHspPV3RqvyndaqKfNjUqs4YlC9wG7HBmjoqLu0bdCODdBAr4G0CZ4ngCeNcDcWwuME8KARBn9JBI8RwANGG/4lIdzHi+A7jTz8p9P4xzcaG2CjaoNlE2wjgA2qDf+SEK4TwBWVB39JBJd5DXDBLMN/Os31sbRmA5wx88DYBu8JYGHmwV8SwRsBvEoZ/iUhCKDr4C8H0NcT9REdQI+h2zJwRx9XcgSRAYw6+GtC2F9cAEcOVauBqnjMVXzqfQAzaj1EI7xWmJUAGjri7vnv3xBCGwJ4Uq9HBiG0IYAHjfKs7PHoOQK4wyhDf4mtcD8BbDD64K8JYTsBXFFt8Nc8Ht0mgJXqQ3+JrXCeAF7NOvhrQngvOoCUoT/H49GLyACSB/+c5K0Q97VAsOT/BBNNAEQTANEEQDQBEE0ARBMA0QRANAEQTQBEEwDRBEA0ARBNAEQTANEEQDQBEE0ARBMA0QRANAEQTQBEEwDRBEA0ARBNAEQTANEEQDQBEE0ARBMA0QRANAEQTQBEEwDRBEA0ARDtL7QGdEwYT0mmAAAAAElFTkSuQmCC">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAELklEQVR4nO3dXXLTShSF0YbiHWYBA4FRMxGGwQzg4d4UwciKbP109z5rvUERI0tfbRSbct59/Pz1V4MQ73sfABxJ0EQRNFEETRRBE0XQRBE0UQRNFEETRdBEETRRBE0UQRNF0EQRNFEETRRBE0XQRBE0UQRNFEETRdBEETRRBE0UQRNF0EQRNFEETRRBE0XQF/n543vvQyhB0EQR9AVe1tlKn0/QRBE0UQR9stvbDLcd5xI0UQR9Imt8PUF3IPTzCJoogj6JFe5D0EQRdCcW/ByCPoFY+xE0UQTdkSU/nqAPJtK+BE0UQR/omXW26McSNFE+9D6AdJ++fPvr1xb5XBb6IEuh3sZ87/dEfhxBE+Xdx89ff/U+iJndW9elJT7i61hnoXc441bB7cc+vil8wtnRvTy+tX6chX7Q1pjX/twRj8EyC71Rr7is9WMs9AbPxrz0dUc+Fv/yKseKUSOy1vdZ6DtGjbm1sY+tNwt9Y7ZYrPXfLPQrs8Xc2pzHfCYL3XKisNYWOibm1rKey7PKLnT6xa+61iUXOj3m1mo8xyWlFrrqRa601iWCrhryrQphx99yiPmPCucidqErXLw9Utc6cqHF/LbUcxS10KkX6WxJax2z0GJ+XtK5m36hky7GCGZf66kXWszHm/2cTrnQs5/0Wcy41tMttJivM+O5nmahZzy5SWZZ6ykWWsz9zXINhl7oWU5iNSOv9RQLDVsJmiiCJoqgiSJoogiaKIImio/TXbH2euvZr5H3/LtnVjrokd8gWPPsz2+pID7oWaPdo/K6Tx90xWD3SF/34YMeNdhPX76ddvF7PufZgx/6VY5RY65s9GsydNDwKEETRdBEETRRBE0UQRNF0EQRNFEEvcMZbzKM/sbF6ARNFEETRdBEETRRBE0UQRNF0EQRNFEETRRB73TkO3veJdxP0EQRNFEETRRBE0XQOx35wSujf4jLDIb+KVgj6/npo9xnoZ9wxZJa6+dY6Af0isxab2ehN+q5mNZ6Owv9htFistbrLPSK0WJubcxjGomFXjBLNNb6Xxb6xiwxtzbXsV7FQv9v9jis9X8sdJs/5tYynsMRSi90agSV17rsQqfG3Fr2c3tLuYWudrGrrXWpoHvEvBTU1cdRKeoSQY8S8i1hHy8+6Cuj2RPMVceZHvXwP0l2BkdE8vIY1e7xjyboJ521dK8fV9yPE/QDrv7n2mo/TtAb9L7vtNrbCfqO3hHfY7XXCfqVUSNeYrWXCbrNFfISq/1H2aBnj3iJ1S4YdGLIS6qudomgq0S8pNpqx7/1TS1l/z80mQRNFEETRdBEETRRBE0UQRNF0EQRNFEETRRBE0XQRBE0UQRNFEETRdBEETRRBE0UQRNF0EQRNFEETRRBE0XQRBE0UQRNFEETRdBEETRRBE0UQRNF0EQRNFEETRRBE+U3dNpaSSZezbEAAAAASUVORK5CYII=">
+<title>專用航班板</title>
+<style>
+  :root {
+    --bg: #f3f4f6;
+    --card: #fff;
+    --text: #171717;
+    --muted: #5c6570;
+    --line: #e5e7eb;
+    --head: #24545c;
+    --warn: #8a5800;
+    --bad: #b42318;
+    --done: #3f6b4a;
+    --chip: #e4eef0;
+    --accent: #386d75;
+    --pax: #ffffff;
+    --cargo: #dcefed;
+    --thead: #f3f7f7;
+    --timew: 4.6rem;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font: 14px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "PingFang TC", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+  }
+  header {
+    position: sticky; top: 0; z-index: 20;
+    background: var(--card);
+    border-bottom: 1px solid var(--line);
+    padding: 12px 16px 10px;
+    padding-top: max(12px, env(safe-area-inset-top));
+  }
+  #meta { display: none; }
+  .title-row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 16px; }
+  h1 { font-size: 18px; margin: 0; color: var(--head); }
+  .sub, #status { color: var(--muted); font-size: 12px; }
+  .filters { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 10px; }
+  .filter-row {
+    display: flex; flex-wrap: nowrap; align-items: center; gap: 8px;
+    width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch;
+  }
+  .filter-row .seg { flex: 0 0 auto; flex-wrap: nowrap; }
+  .filter-row .seg button { padding: 6px 8px; }
+  #row-date-dir-kind #btn-refresh { flex: 0 0 auto; }
+  #row-evkey {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 6px;
+    width: 100%;
+    overflow: hidden;
+    align-items: stretch;
+  }
+  #row-evkey .picker {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    flex: none;
+    width: 100%;
+    min-width: 0;
+    padding: 0;
+    overflow: hidden;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path fill='%235c6570' d='M1 1l5 5 5-5'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+  }
+  #row-evkey .picker-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    width: 100%;
+    min-width: 0;
+    padding: 6px 18px 6px 4px;
+    font: inherit;
+    font-weight: 600;
+    color: var(--muted);
+    text-align: center;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+  #row-evkey .picker-btn .picker-lab {
+    flex: 0 0 auto;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--muted);
+    line-height: 1;
+  }
+  #row-evkey .picker-btn.is-empty .picker-lab { font-size: 16px; }
+  #row-evkey .picker-btn .picker-val {
+    flex: 0 0 auto;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text);
+    font-variant-numeric: tabular-nums;
+    line-height: 1;
+  }
+  #row-evkey .picker select {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 1;
+  }
+  #row-evkey #btn-confirm,
+  #row-evkey .picker,
+  #row-evkey input[type="search"] { min-height: 36px; }
+  #row-evkey #btn-confirm {
+    flex: none;
+    width: 100%;
+    min-width: 0;
+    padding: 6px 4px;
+    font-size: 14px;
+  }
+  #row-evkey input[type="search"] {
+    width: 100%;
+    min-width: 0;
+    flex: none;
+    padding: 6px 6px;
+  }
+  .al-search { flex-wrap: wrap; }
+  .al-search .seg { flex: 0 1 auto; flex-wrap: wrap; }
+  .seg { display: flex; flex-wrap: wrap; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: #fff; }
+  .seg button, #btn-refresh, #btn-confirm {
+    appearance: none; border: 0; background: transparent; color: var(--text);
+    padding: 6px 10px; font: inherit; cursor: pointer;
+  }
+  .seg button { border-right: 1px solid var(--line); }
+  .seg button:last-child { border-right: 0; }
+  .seg button.on { background: var(--accent); color: #fff; }
+  #btn-refresh, #btn-confirm {
+    background: var(--accent); color: #fff; border-radius: 8px; padding: 6px 12px;
+    white-space: nowrap; flex: 0 0 auto;
+  }
+  #btn-confirm { background: var(--head); }
+  #btn-refresh:disabled, #btn-confirm:disabled { opacity: .6; cursor: default; }
+  .picker {
+    display: inline-flex; align-items: center; gap: 4px;
+    border: 1px solid var(--line); border-radius: 8px; background: #fff;
+    padding: 0 0 0 8px; flex: 0 0 auto; white-space: nowrap;
+  }
+  .myorder-acts {
+    display: flex; flex-wrap: nowrap; align-items: center;
+    width: 100%; gap: 8px;
+  }
+  #btn-clear-myorder, #btn-clear-picks, #btn-save-myorder {
+    appearance: none; border: 0; color: #fff; border-radius: 8px;
+    padding: 6px 8px; font: inherit; cursor: pointer;
+    background: var(--head);
+    white-space: nowrap;
+    flex: 1 1 0;
+    text-align: center;
+  }
+  #btn-clear-myorder:disabled, #btn-save-myorder:disabled, #f-al button:disabled { opacity: .6; cursor: default; }
+  th.pick, td.pick { width: 1.7rem; text-align: center; padding-left: 6px; padding-right: 4px; }
+  input.pick-box {
+    appearance: none; -webkit-appearance: none;
+    width: 18px; height: 18px; margin: 0;
+    border: 2px solid var(--accent); border-radius: 50%;
+    background: #fff; cursor: pointer; vertical-align: middle;
+  }
+  input.pick-box:checked {
+    background: var(--accent);
+    box-shadow: inset 0 0 0 3px #fff;
+  }
+  .refresh-search {
+    display: inline-flex; flex-wrap: nowrap; align-items: center; gap: 8px;
+    flex: 0 0 auto;
+  }
+  input[type="search"] {
+    font: inherit; padding: 6px 8px; border: 1px solid var(--line); border-radius: 8px;
+    width: 8.5em; min-width: 0; flex: 0 0 auto;
+  }
+  main { padding: 12px 16px 32px; }
+  section { margin-bottom: 22px; }
+  h2 { font-size: 15px; margin: 0 0 8px; color: var(--head); }
+  h2.sec-title {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 8px;
+    margin: 0 0 10px;
+    overflow: hidden;
+  }
+  h2.sec-title .sec-label { flex: 0 0 auto; white-space: nowrap; }
+  .sec-actions {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    min-width: 0;
+    flex: 1 1 auto;
+    align-items: center;
+  }
+  #sec-arr > h2.sec-title { margin-bottom: 8px; }
+  #sec-arr .sec-actions {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 8px;
+    width: 100%;
+    flex: none;
+    margin: 0 0 10px;
+  }
+  button.sec-act {
+    appearance: none; border: 0;
+    background: var(--accent); color: #fff;
+    font: inherit; font-size: 12px; font-weight: 700;
+    padding: 6px 6px; margin: 0; cursor: pointer;
+    white-space: nowrap; border-radius: 8px;
+    line-height: 1.3; min-height: 32px; min-width: 0;
+    width: 100%;
+    text-align: center;
+  }
+  button.sec-act:hover { filter: brightness(1.08); }
+  button.sec-act:active { transform: scale(0.97); }
+  button.sec-act:disabled { opacity: .6; cursor: default; filter: none; transform: none; }
+  .count { color: var(--muted); font-weight: 400; }
+  .misc-list { list-style: none; margin: 0; padding: 0; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+  .misc-list li {
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--line);
+    font-weight: 600;
+    font-size: 14px;
+    white-space: pre-wrap;
+  }
+  .misc-list li:last-child { border-bottom: 0; }
+  .table-wrap {
+    overflow-x: auto; overflow-y: visible;
+    -webkit-overflow-scrolling: touch;
+    background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+  }
+  table { width: max-content; border-collapse: separate; border-spacing: 0; }
+  @media (min-width: 701px) {
+    table { min-width: 100%; }
+  }
+  th, td { padding: 7px 8px; text-align: left; border-bottom: 1px solid var(--line); white-space: nowrap; background: var(--pax); }
+  th.info, td.info {
+    width: 1%;
+    min-width: max-content;
+    max-width: none;
+    padding-right: 24px;
+    vertical-align: top;
+    line-height: 1.35;
+    white-space: nowrap;
+    overflow: visible;
+    font-variant-numeric: tabular-nums;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  td.info .info-code { display: inline-block; white-space: nowrap; min-width: max-content; }
+  @media (max-width: 700px) {
+    table { min-width: 0; width: max-content; }
+    th, td { padding: 7px 4px; }
+    th.pick, td.pick { width: 28px; padding-left: 6px; padding-right: 2px; }
+    td.flight { padding-left: 4px; padding-right: 4px; }
+    td.time, th.time { padding-left: 2px; padding-right: 2px; }
+    th.info, td.info { padding-left: 6px; padding-right: 8px; }
+    .sec-actions { gap: 12px; }
+    #sec-arr .sec-actions { gap: 8px; }
+    button.sec-act { padding: 6px 6px; min-height: 32px; font-size: 12px; }
+  }
+  th {
+    font-size: 12px; color: var(--muted); font-weight: 600;
+    background: var(--thead);
+  }
+
+  th.ac-reg, td.ac-reg {
+    white-space: nowrap;
+    min-width: 4.8em;
+  }
+  #done-reg-card .reg-list { margin: 4px 0 8px; }
+  #done-reg-card .reg-row {
+    display: flex; align-items: center; gap: 10px; margin: 8px 0;
+  }
+  #done-reg-card .reg-row .flight { font-weight: 600; min-width: 5.5em; }
+  #done-reg-card .reg-row input {
+    width: 4.5em; text-align: center; text-transform: uppercase;
+    letter-spacing: .12em; font-weight: 600;
+  }
+  #done-toast {
+    display: none; position: fixed; left: 50%; bottom: 24px;
+    transform: translateX(-50%); z-index: 110;
+    max-width: min(92vw, 420px);
+    background: #1f3d42; color: #fff;
+    padding: 10px 16px; border-radius: 8px; font-size: 13px;
+    box-shadow: 0 8px 24px rgba(0,0,0,.18); white-space: pre-wrap;
+  }
+  #done-toast.show { display: block; }
+  #done-toast.err { background: #8a2a2a; }
+  td.flight { font-weight: 600; font-variant-numeric: tabular-nums; }
+  td.time, th.time { font-variant-numeric: tabular-nums; }
+  tr.cargo td { background: var(--cargo); }
+  .pill { display: inline-block; padding: 1px 6px; border-radius: 999px; font-size: 11px; background: var(--chip); }
+  .pill.cargo { background: #c5e0dc; }
+  .st-warn { color: var(--warn); font-weight: 600; }
+  .st-bad { color: var(--bad); font-weight: 600; }
+  .st-done { color: var(--done); }
+  .empty { color: var(--muted); padding: 20px; background: #fff; }
+  footer { color: var(--muted); font-size: 12px; padding: 0 16px 28px; }
+  a { color: var(--accent); }
+  @media (max-width: 700px) {
+    header { padding-left: 8px; padding-right: 8px; }
+    main { padding-left: 8px; padding-right: 8px; }
+  }
+
+  body:not(.authed) header,
+  body:not(.authed) main,
+  body:not(.authed) footer { display: none; }
+  #login-gate, #modal-mask {
+    display: none;
+    position: fixed; inset: 0; z-index: 80;
+    align-items: center; justify-content: center;
+    padding: 20px;
+    background: #eef2f2;
+  }
+  body.login #login-gate { display: flex; }
+  #modal-mask.open {
+    display: flex;
+    background: rgba(36, 84, 92, .45);
+    z-index: 90;
+  }
+  .auth-card {
+    width: 100%; max-width: 380px;
+    background: #fff; border: 1px solid var(--line);
+    border-radius: 12px; padding: 22px 20px 18px;
+    box-shadow: 0 8px 24px rgba(36, 84, 92, .08);
+  }
+  #modal-mask .auth-card { max-width: 520px; }
+  .auth-card h1, .auth-card h2 { font-size: 18px; margin: 0 0 6px; color: var(--head); }
+  .auth-note { color: var(--muted); font-size: 12px; margin: 0 0 14px; }
+  .auth-card label { display: block; font-size: 12px; color: var(--muted); margin: 10px 0 4px; }
+  .auth-card input[type="text"],
+  .auth-card input[type="password"] {
+    width: 100%; font: inherit; padding: 8px 10px;
+    border: 1px solid var(--line); border-radius: 8px;
+  }
+  .auth-check { display: flex; align-items: center; gap: 8px; margin: 12px 0 4px; font-size: 13px; }
+  .auth-card button[type="submit"], .auth-actions button {
+    appearance: none; border: 0; background: var(--accent); color: #fff;
+    border-radius: 8px; padding: 8px 12px; font: inherit; cursor: pointer;
+  }
+  .auth-card button[type="submit"] { width: 100%; margin-top: 12px; }
+  .auth-actions { display: flex; gap: 8px; justify-content: flex-end; margin-top: 14px; }
+  .auth-actions button.secondary { background: #fff; color: var(--text); border: 1px solid var(--line); }
+  .auth-err { color: var(--bad); font-size: 13px; min-height: 1.2em; margin: 8px 0 0; }
+  .auth-ok { color: var(--done); font-size: 13px; margin: 8px 0 0; }
+  #user-bar { margin-left: auto; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  #user-bar .staff { font-size: 12px; color: var(--muted); }
+  #user-bar button {
+    appearance: none; border: 1px solid var(--line); background: #fff; color: var(--text);
+    border-radius: 8px; padding: 5px 10px; font: inherit; cursor: pointer;
+  }
+  #user-bar button.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .stats-wrap { max-height: 60vh; overflow: auto; margin-top: 10px; }
+  .stats-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .stats-table th, .stats-table td {
+    text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--line); white-space: nowrap;
+  }
+  .stats-table th { color: var(--muted); font-size: 12px; }
+
+  html, body { overscroll-behavior-y: none; touch-action: pan-y; }
+</style>
+<script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+
+<div id="login-gate">
+  <form class="auth-card" id="login-form" autocomplete="on">
+    <h1>專用航班板</h1>
+    <p class="auth-note">只供內部使用，不作商業用途</p>
+    <label for="login-id">職員編號</label>
+    <input id="login-id" name="username" type="text" inputmode="numeric" pattern="[0-9]{7}" maxlength="7" placeholder="7 位職員編號" required autocomplete="username">
+    <label for="login-pw">密碼</label>
+    <input id="login-pw" name="password" type="password" required autocomplete="current-password">
+    <label class="auth-check"><input id="login-stay" type="checkbox" checked> 保持登入</label>
+    <p class="auth-note">即使保持登入，閒置 120 分鐘亦要重新登入。</p>
+    <button type="submit">登入</button>
+    <div class="auth-err" id="login-err"></div>
+  </form>
+</div>
+<div id="modal-mask">
+  <form class="auth-card" id="pw-form" hidden>
+    <h2>改密碼</h2>
+    <label for="pw-old">舊密碼</label>
+    <input id="pw-old" type="password" required autocomplete="current-password">
+    <label for="pw-new">新密碼</label>
+    <input id="pw-new" type="password" required minlength="4" autocomplete="new-password">
+    <label for="pw-new2">再輸入新密碼</label>
+    <input id="pw-new2" type="password" required minlength="4" autocomplete="new-password">
+    <div class="auth-err" id="pw-err"></div>
+    <div class="auth-ok" id="pw-ok"></div>
+    <div class="auth-actions">
+      <button type="button" class="secondary" id="pw-cancel">取消</button>
+      <button type="submit">儲存</button>
+    </div>
+  </form>
+  <div class="auth-card" id="stats-card" hidden>
+    <h2>同事開板次數</h2>
+    <p class="auth-note">淨係你睇到。每次重新打開航班板先計一次，唔計每分鐘自動更新。</p>
+    <div class="stats-wrap" id="stats-box"></div>
+    <div class="auth-actions">
+      <button type="button" class="secondary" id="stats-close">關閉</button>
+    </div>
+  </div>
+  <form class="auth-card" id="done-reg-card" hidden>
+    <h2 id="done-reg-title">補填機身編號</h2>
+    <p class="auth-note" id="done-reg-note">呢班離港航班未有 AC/REG，請輸入最後兩個英文字，例如 ID。</p>
+    <div class="reg-list" id="done-reg-list"></div>
+    <div class="auth-err" id="done-reg-err"></div>
+    <div class="auth-actions">
+      <button type="button" class="secondary" id="done-reg-cancel">取消</button>
+      <button type="submit">確認發出</button>
+    </div>
+  </form>
+</div>
+<div id="done-toast" role="status"></div>
+
+<header>
+  <div class="title-row">
+    <h1>專用航班板</h1>
+    <div class="sub" id="meta">快照：2026-11-12 04:00:55 香港時間　CX／LH／LD／LX／3S／NH／C6／MS／6E／CK／MU　客機同貨機（唔包括 codeshare）</div>
+    <div id="status"></div>
+    <div id="user-bar" hidden>
+      <span class="staff" id="user-label"></span>
+      <button type="button" id="btn-stats" class="primary" hidden>睇同事開板次數</button>
+      <button type="button" id="btn-pw">改密碼</button>
+      <button type="button" id="btn-logout">登出</button>
+    </div>
+  </div>
+  <div class="filters">
+    <div class="filter-row" id="row-date-dir-kind">
+      <div class="seg" id="f-date"></div>
+      <div class="seg" id="f-dir"></div>
+      <div class="seg" id="f-kind"></div>
+      <button type="button" id="btn-refresh">刷新</button>
+      <button type="button" id="btn-export-esu" style="background:var(--head);color:#fff;border:0;border-radius:8px;padding:6px 12px;font:inherit;cursor:pointer;white-space:nowrap;flex:0 0 auto;">匯出今日 ESU Excel</button>
+    </div>
+    <div class="filter-row al-search">
+      <div class="seg" id="f-al"></div>
+    </div>
+    <div class="filter-row" id="row-evkey">
+      <label class="picker">
+        <span class="picker-btn is-empty" id="myev-btn"><span class="picker-lab">MyEV</span></span>
+        <select id="myev" aria-label="MyEV"></select>
+      </label>
+      <label class="picker">
+        <span class="picker-btn is-empty" id="mykey-btn"><span class="picker-lab">MyKey</span></span>
+        <select id="mykey" aria-label="MyKey"></select>
+      </label>
+      <button type="button" id="btn-confirm" disabled>確認 EV/Key</button>
+      <input type="search" id="q" placeholder="搜尋航班" autocomplete="off" aria-label="搜尋航班">
+    </div>
+    <div class="myorder-acts">
+      <button type="button" id="btn-clear-myorder" hidden>清除 MyOrder</button>
+      <button type="button" id="btn-clear-picks" hidden>清除已選</button>
+      <button type="button" id="btn-save-myorder" hidden>存為 MyOrder</button>
+    </div>
+  </div>
+</header>
+<main>
+  <section id="sec-misc" style="display:none">
+    <h2 class="sec-title">
+      <span class="sec-label">雜項 <span class="count" id="c-misc"></span></span>
+    </h2>
+    <div id="box-misc"></div>
+  </section>
+  <section id="sec-dep">
+    <h2 class="sec-title">
+      <span class="sec-label">離港 <span class="count" id="c-dep"></span></span>
+      <span class="sec-actions">
+        <button type="button" class="sec-act" data-escort-act="go" data-dir="dep">GO</button>
+        <button type="button" class="sec-act" data-escort-act="done" data-dir="dep">DONE</button>
+      </span>
+    </h2>
+    <div class="table-wrap" id="box-dep"></div>
+  </section>
+  <section id="sec-arr">
+    <h2 class="sec-title">
+      <span class="sec-label">入口 <span class="count" id="c-arr"></span></span>
+    </h2>
+    <div class="sec-actions">
+      <button type="button" class="sec-act" data-escort-act="sby" data-dir="arr">SBY</button>
+      <button type="button" class="sec-act" data-escort-act="signed" data-dir="arr">SIGNED</button>
+      <button type="button" class="sec-act" data-escort-act="no_sup" data-dir="arr">NO SUP</button>
+      <button type="button" class="sec-act" data-escort-act="go_vcc" data-dir="arr">GO VCC</button>
+      <button type="button" class="sec-act" data-escort-act="done" data-dir="arr">DONE</button>
+    </div>
+    <div class="table-wrap" id="box-arr"></div>
+  </section>
+</main>
+<footer>
+  只顯示航班號開頭為 CX、LH、LD、LX、3S、NH、C6、MS、6E、CK、MU 嘅航班（3S 只包括貨機）。有方括號嘅 codeshare 班號唔顯示。入口喺實際抵達（ATA）90 分鐘後隱藏，離港喺實際起飛 1 小時後隱藏。
+</footer>
+<script>
+const AIRLINES = ["CX","LH","LD","LX","3S","NH","C6","MS","6E","CK","MU"];
+const APP_VER = "2026-11-19-merge-protect";
+let ROWS = [];
+const state = { date: "today", dir: "arr", al: "all", kind: "pax", q: "", onlyPicked: false, myOrderOn: false };
+const FILTER_STORE = "hkg_fb_filters";
+function saveFilters() {
+  try {
+    localStorage.setItem(FILTER_STORE, JSON.stringify({
+      date: state.date, dir: state.dir, al: state.al, kind: state.kind
+    }));
+  } catch (e) {}
+}
+function loadFilters() {
+  try {
+    const o = JSON.parse(localStorage.getItem(FILTER_STORE) || "null");
+    if (!o || typeof o !== "object") return;
+    if (o.date === "today" || o.date === "tomorrow" || o.date === hkYmd(0) || o.date === hkYmd(1)) state.date = (o.date === hkYmd(0) ? "today" : o.date === hkYmd(1) ? "tomorrow" : o.date);
+    if (o.dir === "arr" || o.dir === "dep") state.dir = o.dir;
+    if (Array.isArray(o.al)) {
+      const als = o.al.filter(a => AIRLINES.indexOf(a) >= 0);
+      state.al = (!als.length || als.length === AIRLINES.length) ? "all" : als;
+    } else if (o.al === "all" || AIRLINES.indexOf(o.al) >= 0) state.al = o.al;
+    if (o.kind === "pax" || o.kind === "cargo") state.kind = o.kind;
+  } catch (e) {}
+}
+loadFilters();
+const PICK_STORE = "hkg-flight-board-picks";
+let selected = new Set();
+try {
+  const saved = JSON.parse(localStorage.getItem(PICK_STORE) || "[]");
+  if (Array.isArray(saved)) selected = new Set(saved.map(String));
+} catch (e) {}
+state.onlyPicked = selected.size > 0;
+function savePicks() {
+  try { localStorage.setItem(PICK_STORE, JSON.stringify([...selected])); } catch (e) {}
+}
+const MYORDER_STORE = "hkg_fb_myorder";
+let myOrder = new Set();
+let myOrderTimes = new Map();
+let myOrderInfo = new Map();
+let myOrderMisc = new Map();
+function orderYmd(date) {
+  if (date === "today") return hkYmd(0);
+  if (date === "tomorrow") return hkYmd(1);
+  return date || "";
+}
+function normOrderDir(dir) {
+  const raw = String(dir || "").trim();
+  const low = raw.toLowerCase();
+  if (raw === "A" || low === "arr") return "A";
+  if (raw === "D" || low === "dep") return "D";
+  return "";
+}
+function myOrderKeyFromParts(date, dir, flight) {
+  const ymd = orderYmd(date);
+  const fl = flightKey(flight);
+  const d = normOrderDir(dir);
+  if (!ymd || !d || !fl) return "";
+  return ymd + "|" + d + "|" + fl;
+}
+function myOrderKey(r) {
+  const ymd = (r && (r.ymd || r.opYmd)) || orderYmd(r && r.date) || dutyYmd(r);
+  const fl = flightKey(r && r.flight);
+  const d = normOrderDir(r && r.dir);
+  if (!ymd || !d || !fl) return "";
+  return ymd + "|" + d + "|" + fl;
+}
+function loadMyOrder() {
+  try {
+    const o = JSON.parse(localStorage.getItem(MYORDER_STORE) || "null");
+    if (!o) return;
+    const list = Array.isArray(o) ? o : (Array.isArray(o.flights) ? o.flights : []);
+    const next = new Set();
+    list.forEach(item => {
+      if (typeof item !== "string" || !item) return;
+      if (item.indexOf("|") >= 0) {
+        const parts = item.split("|");
+        if (parts.length >= 3) {
+          const k = myOrderKeyFromParts(parts[0], parts[1], parts.slice(2).join("|"));
+          if (k) next.add(k);
+          else if (!parts[1]) {
+            const ymd = orderYmd(parts[0]) || parts[0];
+            const fl = flightKey(parts.slice(2).join("|"));
+            if (ymd && fl) next.add(ymd + "||" + fl);
+          }
+        }
+        return;
+      }
+    });
+    myOrder = next;
+    const times = new Map();
+    const rawTimes = (!Array.isArray(o) && o.times && typeof o.times === "object") ? o.times : {};
+    Object.keys(rawTimes).forEach(k => {
+      const arr = Array.isArray(rawTimes[k]) ? rawTimes[k] : [];
+      const set = new Set(arr.map(normOrderTime).filter(Boolean));
+      if (set.size) times.set(k, set);
+    });
+    myOrderTimes = times;
+    const infos = new Map();
+    const rawInfos = (!Array.isArray(o) && o.infos && typeof o.infos === "object") ? o.infos : {};
+    Object.keys(rawInfos).forEach(k => {
+      const v = String(rawInfos[k] || "").trim();
+      if (v) infos.set(k, v);
+    });
+    myOrderInfo = infos;
+    const misc = new Map();
+    const rawMisc = (!Array.isArray(o) && o.misc && typeof o.misc === "object") ? o.misc : {};
+    Object.keys(rawMisc).forEach(k => {
+      const ymd = orderYmd(k) || k;
+      const arr = Array.isArray(rawMisc[k]) ? rawMisc[k].map(normMiscItem).filter(Boolean) : [];
+      if (ymd && arr.length) misc.set(ymd, arr);
+    });
+    myOrderMisc = misc;
+    if (!Array.isArray(o) && o.on && (myOrder.size || hasMiscItems())) state.myOrderOn = true;
+  } catch (e) {}
+}
+function saveMyOrder() {
+  try {
+    const times = {};
+    myOrderTimes.forEach((set, k) => { times[k] = [...set]; });
+    const infos = {};
+    myOrderInfo.forEach((v, k) => { infos[k] = v; });
+    const misc = {};
+    myOrderMisc.forEach((v, k) => { misc[k] = v; });
+    localStorage.setItem(MYORDER_STORE, JSON.stringify({
+      flights: [...myOrder], times, infos, misc, on: !!state.myOrderOn
+    }));
+  } catch (e) {}
+}
+function resetMyOrder(keepOn) {
+  myOrder = new Set();
+  myOrderTimes = new Map();
+  myOrderInfo = new Map();
+  myOrderMisc = new Map();
+  if (!keepOn) state.myOrderOn = false;
+}
+function applyServerOrders(orders) {
+  const next = new Set();
+  const times = new Map();
+  const infos = new Map();
+  const miscMap = new Map();
+  (orders || []).forEach(ord => {
+    const ymd = orderYmd(ord && ord.ymd);
+    if (!ymd) return;
+    (ord.flights || []).forEach(item => {
+      const fl = flightKey(item && item.flight);
+      if (!fl) return;
+      const dir = (item.dir === "A" || item.dir === "D") ? item.dir : "";
+      const tm = normOrderTime(item.time);
+      const info = String(item.info || "").trim();
+      if (dir) next.add(ymd + "|" + dir + "|" + fl);
+      else {
+        const loose = ymd + "||" + fl;
+        next.add(loose);
+        if (tm) {
+          if (!times.has(loose)) times.set(loose, new Set());
+          times.get(loose).add(tm);
+        }
+      }
+      if (info) {
+        if (tm) infos.set(ymd + "||" + fl + "|" + tm, info);
+        infos.set(ymd + "||" + fl, info);
+      }
+    });
+    const items = Array.isArray(ord.misc) ? ord.misc.map(normMiscItem).filter(Boolean) : [];
+    if (items.length) miscMap.set(ymd, items);
+  });
+  myOrder = next;
+  myOrderTimes = times;
+  myOrderInfo = infos;
+  myOrderMisc = miscMap;
+  if (hasMyOrderData()) state.myOrderOn = true;
+  saveMyOrder();
+}
+async function pullServerMyOrder() {
+  try {
+    const { res, data } = await authFetch("/api/myorder");
+    if (!res.ok || !data || !data.ok) return false;
+    applyServerOrders(data.orders || []);
+    await pullSentDoneHides();
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+function flightsPayloadFromSet() {
+  const byDay = new Map();
+  myOrder.forEach(k => {
+    const parts = String(k).split("|");
+    if (parts.length < 3) return;
+    const ymd = parts[0], dir = parts[1], fl = parts.slice(2).join("|");
+    if (!byDay.has(ymd)) byDay.set(ymd, []);
+    const rec = { flight: fl };
+    if (dir === "A" || dir === "D") rec.dir = dir;
+    const tset = myOrderTimes.get(ymd + "||" + fl);
+    if (tset && tset.size) rec.time = [...tset][0];
+    const info = myOrderInfo.get(ymd + "||" + fl + (rec.time ? "|" + rec.time : "")) || myOrderInfo.get(ymd + "||" + fl);
+    if (info) rec.info = info;
+    byDay.get(ymd).push(rec);
+  });
+  return byDay;
+}
+async function pushServerMyOrder() {
+  const byDay = flightsPayloadFromSet();
+  const days = [...byDay.keys()];
+  if (!days.length) {
+    try { await authFetch("/api/myorder", { method: "DELETE" }); } catch (e) {}
+    return;
+  }
+  for (const ymd of days) {
+    try {
+      await authFetch("/api/myorder", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ymd, flights: byDay.get(ymd), replace: true })
+      });
+    } catch (e) {}
+  }
+}
+function dropMyOrderPick(date, dir, flight) {
+  const mk = myOrderKeyFromParts(date, dir, flight);
+  const ymd = orderYmd(date);
+  const fl = flightKey(flight);
+  const loose = (ymd && fl) ? (ymd + "||" + fl) : "";
+  if (mk) myOrder.delete(mk);
+  if (loose) {
+    myOrder.delete(loose);
+    myOrderTimes.delete(loose);
+    [...myOrderInfo.keys()].forEach(ik => {
+      if (ik === loose || ik.startsWith(loose + "|")) myOrderInfo.delete(ik);
+    });
+  }
+}
+function setMyOrderFromPicks() {
+  const picks = [];
+  [...selected].forEach(k => {
+    const parts = String(k).split("|");
+    if (parts.length < 3) return;
+    const date = parts[0], dir = parts[1], flight = parts.slice(2).join("|");
+    const mk = myOrderKeyFromParts(date, dir, flight);
+    if (!mk) return;
+    picks.push({ date, dir, flight, k });
+  });
+  const adding = picks.filter(p => !selectedKeyIsMyOrder(p.k));
+  if (adding.length) adding.forEach(p => myOrder.add(myOrderKeyFromParts(p.date, p.dir, p.flight)));
+  else picks.forEach(p => dropMyOrderPick(p.date, p.dir, p.flight));
+}
+function normOrderTime(v) {
+  const s = String(v || "").trim();
+  let m = s.match(/^(\d{1,2}):(\d{2})/);
+  if (m) return String(+m[1]).padStart(2, "0") + ":" + m[2];
+  m = s.match(/^(\d{3,4})$/);
+  if (m) {
+    const x = m[1].padStart(4, "0");
+    return x.slice(0, 2) + ":" + x.slice(2);
+  }
+  return "";
+}
+function rowTimes(r) {
+  return [r && r.std, r && r.etd, r && r.atd].map(normOrderTime).filter(Boolean);
+}
+function myOrderHas(r) {
+  const k = myOrderKey(r);
+  if (k && myOrder.has(k)) return true;
+  const ymd = (r && (r.ymd || r.opYmd)) || orderYmd(r && r.date) || dutyYmd(r);
+  const fl = flightKey(r && r.flight);
+  if (!ymd || !fl) return false;
+  const loose = ymd + "||" + fl;
+  if (myOrder.has(loose)) return true;
+  // Writer stores A/D; older local keys and official rows may use arr/dep.
+  const d = normOrderDir(r && r.dir);
+  if (d === "A" && (myOrder.has(ymd + "|arr|" + fl) || myOrder.has(ymd + "|A|" + fl))) return true;
+  if (d === "D" && (myOrder.has(ymd + "|dep|" + fl) || myOrder.has(ymd + "|D|" + fl))) return true;
+  return false;
+}
+function hasMiscItems() {
+  const now = hkNow().getTime();
+  for (const items of myOrderMisc.values()) {
+    if (visibleMiscItems(items, now).length) return true;
+  }
+  return false;
+}
+function hasMyOrderData() {
+  return myOrder.size > 0 || hasMiscItems();
+}
+function miscItemsForDate(ymd) {
+  return visibleMiscItems((ymd && myOrderMisc.get(ymd)) || []).map(miscItemText);
+}
+function latestStamp(rows, pick) {
+  let best = null;
+  (rows || []).forEach(r => {
+    const raw = pick(r);
+    const ymd = (r && (r.ymd || r.opYmd)) || orderYmd(r && r.date) || dutyYmd(r);
+    const at = dayStamp(ymd, raw);
+    if (at && (!best || at.getTime() > best.getTime())) best = at;
+  });
+  return best;
+}
+const MISC_EXPIRE_MS = 120 * 60 * 1000;
+const MYORDER_DEP_EXPIRE_MS = 15 * 60 * 1000;
+const MYORDER_ARR_EXPIRE_MS = 120 * 60 * 1000;
+
+function normMiscItem(x) {
+  if (x && typeof x === "object" && !Array.isArray(x)) {
+    const text = String(x.text || "").trim();
+    const at = String(x.at || "").trim();
+    return text ? { text, at } : null;
+  }
+  const text = String(x || "").trim();
+  return text ? { text, at: "" } : null;
+}
+function miscItemText(item) {
+  if (!item) return "";
+  return typeof item === "string" ? item : String(item.text || "");
+}
+function miscItemAtMs(item) {
+  const at = item && typeof item === "object" ? item.at : "";
+  const t = at ? Date.parse(at) : NaN;
+  return Number.isFinite(t) ? t : 0;
+}
+function isMiscItemExpired(item, now) {
+  const t = miscItemAtMs(item);
+  return !!(t && now - t >= MISC_EXPIRE_MS);
+}
+function visibleMiscItems(items, now) {
+  const ts = now || hkNow().getTime();
+  return (items || []).filter(it => it && !isMiscItemExpired(it, ts));
+}
+function isMiscHidden(ymd, items) {
+  return !items || !items.length;
+}
+function flightActualStamp(r) {
+  if (!r || !r.atd) return null;
+  return actualStamp(r.atd, r);
+}
+function shouldDropMyOrderFlight(r, now) {
+  if (!r) return false;
+  if (hiddenByDone(r)) return true;
+  const at = flightActualStamp(r);
+  if (!at) return false;
+  const wait = r.dir === "arr" ? MYORDER_ARR_EXPIRE_MS : r.dir === "dep" ? MYORDER_DEP_EXPIRE_MS : 0;
+  if (!wait) return false;
+  return now - at.getTime() >= wait;
+}
+
+let persistPruneTimer = 0;
+let persistPruneDays = new Set();
+let persistPruneDrops = new Map();
+function rememberPersistDrop(f) {
+  if (!f) return;
+  const ymd = orderYmd(f.ymd || f.date);
+  const fl = flightKey(f.flight);
+  if (!ymd || !fl) return;
+  const rec = { flight: fl, ymd };
+  const dir = String(f.dir || "").toUpperCase();
+  if (dir === "A" || dir === "ARR" || dir === "ARRIVAL") rec.dir = "A";
+  else if (dir === "D" || dir === "DEP" || dir === "DEPARTURE") rec.dir = "D";
+  if (!persistPruneDrops.has(ymd)) persistPruneDrops.set(ymd, []);
+  const list = persistPruneDrops.get(ymd);
+  if (!list.some(x => flightKey(x.flight) === fl)) list.push(rec);
+  persistPruneDays.add(ymd);
+}
+function schedulePersistPrune(ymds, drops) {
+  (ymds || []).forEach(y => { if (y) persistPruneDays.add(y); });
+  (drops || []).forEach(rememberPersistDrop);
+  if (persistPruneTimer) return;
+  persistPruneTimer = setTimeout(() => {
+    persistPruneTimer = 0;
+    persistPrunedMyOrder();
+  }, 300);
+}
+async function persistPrunedMyOrder(ymds) {
+  if (persistPruneTimer) {
+    clearTimeout(persistPruneTimer);
+    persistPruneTimer = 0;
+  }
+  (ymds || []).forEach(y => { if (y) persistPruneDays.add(y); });
+  const pendingDays = [...persistPruneDays];
+  persistPruneDays = new Set();
+  const pendingDrops = persistPruneDrops;
+  persistPruneDrops = new Map();
+  const days = new Set(pendingDays);
+  pendingDrops.forEach((_, ymd) => days.add(ymd));
+  if (!days.size) return;
+  for (const ymd of days) {
+    const drop = pendingDrops.get(ymd) || [];
+    if (!drop.length) continue;
+    try {
+      await authFetch("/api/myorder", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ymd, drop })
+      });
+    } catch (e) {}
+  }
+}
+function pruneExpiredMyOrder() {
+  const now = hkNow().getTime();
+  let changed = false;
+  const changedDays = new Set();
+  const drop = [];
+  (ROWS || []).forEach(r => {
+    if (!myOrderHas(r) || !shouldDropMyOrderFlight(r, now)) return;
+    drop.push({
+      ymd: (r && (r.ymd || r.opYmd)) || orderYmd(r && r.date) || dutyYmd(r),
+      date: r.date,
+      dir: r.dir,
+      flight: r.flight
+    });
+    changedDays.add((r && (r.ymd || r.opYmd)) || orderYmd(r && r.date) || dutyYmd(r));
+  });
+  if (drop.length) {
+    removeFlightsFromLocalMyOrder(drop);
+    changed = true;
+  }
+  for (const [ymd, items] of [...myOrderMisc.entries()]) {
+    const next = (items || []).filter(it => !isMiscItemExpired(it, now));
+    if (next.length !== (items || []).length) {
+      if (next.length) myOrderMisc.set(ymd, next);
+      else myOrderMisc.delete(ymd);
+      changedDays.add(ymd);
+      changed = true;
+    }
+  }
+  if (!hasMyOrderData()) state.myOrderOn = false;
+  if (changed) {
+    saveMyOrder();
+    schedulePersistPrune([...changedDays], drop);
+  }
+  return changed;
+}
+function selectedKeyIsMyOrder(k) {
+  const parts = String(k).split("|");
+  if (parts.length < 3) return false;
+  const date = parts[0], dir = parts[1], flight = parts.slice(2).join("|");
+  const mk = myOrderKeyFromParts(date, dir, flight);
+  if (mk && myOrder.has(mk)) return true;
+  const ymd = orderYmd(date);
+  const fl = flightKey(flight);
+  const loose = (ymd && fl) ? (ymd + "||" + fl) : "";
+  return !!(loose && myOrder.has(loose));
+}
+function extraPickCount() {
+  let n = 0;
+  selected.forEach(k => { if (!selectedKeyIsMyOrder(k)) n++; });
+  return n;
+}
+function picksFromMyOrder() {
+  const keys = new Set();
+  (ROWS || []).forEach(r => {
+    if (myOrderHas(r)) keys.add(rowKey(r));
+  });
+  return keys;
+}
+function removeSelectedFlights() {
+  [...selected].forEach(k => {
+    const parts = String(k).split("|");
+    if (parts.length >= 3) {
+      const date = parts[0], dir = parts[1], flight = parts.slice(2).join("|");
+      const mk = myOrderKeyFromParts(date, dir, flight);
+      const ymd = orderYmd(date);
+      const fl = flightKey(flight);
+      const loose = (ymd && fl) ? (ymd + "||" + fl) : "";
+      if (mk) myOrder.delete(mk);
+      if (loose) {
+        myOrder.delete(loose);
+        myOrderTimes.delete(loose);
+        [...myOrderInfo.keys()].forEach(ik => {
+          if (ik === loose || ik.startsWith(loose + "|")) myOrderInfo.delete(ik);
+        });
+      }
+    }
+    selected.delete(k);
+  });
+  if (!hasMyOrderData()) state.myOrderOn = false;
+  if (!selected.size) state.onlyPicked = false;
+}
+let timer = null;
+let lightTimer = null;
+let lastOk = "";
+let liveOk = null;
+let lastFullAt = 0;
+let lastLightAt = 0;
+const FULL_MS = 15 * 60 * 1000;
+const LIGHT_MS = 150 * 1000;
+let srcNote = "";
+
+function isFreighterType(type) {
+  const s = String(type || "").toUpperCase();
+  return /\b(?:33Y|33X|74Y|74N|74F|77F|77Y|76F|75F|73F)\b/.test(s);
+}
+function isCargoAirline(al) {
+  return al === "LD" || al === "CK" || al === "3S";
+}
+function isCargo(r) {
+  const t = (r.t || "").toUpperCase();
+  if (t === "F" || t === "H" || t === "A" || t === "M") return true;
+  const al = (r.al || airlineOf(r.flight || "") || "").toUpperCase();
+  if (isCargoAirline(al)) return true;
+  if ((t === "T" || t === "K" || t === "P") && isFreighterType(r.type)) return true;
+  return false;
+}
+function esc(s) {
+  return String(s ?? "").replace(/[&<>"']/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;" }[c]));
+}
+function pad2(n) { return String(n).padStart(2, "0"); }
+function hhmm(v) {
+  if (v === null || v === undefined || v === "") return "—";
+  const s = String(v).trim();
+  const m = s.match(/^(\d{1,2}):(\d{2})(?::(\d{2}))?$/);
+  if (!m) return esc(s);
+  return pad2(m[1]) + ":" + m[2];
+}
+function parseHms(v) {
+  const s = String(v || "").trim();
+  const m = s.match(/^(\d{1,2}):(\d{2})(?::(\d{2}))?$/);
+  if (!m) return null;
+  return { h: +m[1], m: +m[2], s: +(m[3] || 0) };
+}
+function hkNow() {
+  const fmt = new Intl.DateTimeFormat("en-GB", {
+    timeZone: "Asia/Hong_Kong", year: "numeric", month: "2-digit", day: "2-digit",
+    hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false
+  });
+  const p = {};
+  for (const x of fmt.formatToParts(new Date())) p[x.type] = x.value;
+  return new Date(p.year + "-" + p.month + "-" + p.day + "T" + p.hour + ":" + p.minute + ":" + p.second + "+08:00");
+}
+function fmtHk(d) {
+  const fmt = new Intl.DateTimeFormat("en-GB", {
+    timeZone: "Asia/Hong_Kong", year: "numeric", month: "2-digit", day: "2-digit",
+    hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false
+  });
+  const p = {};
+  for (const x of fmt.formatToParts(d)) p[x.type] = x.value;
+  return p.year + "-" + p.month + "-" + p.day + " " + p.hour + ":" + p.minute + ":" + p.second + " 香港時間";
+}
+function hkYmd(offset) {
+  const d = new Date(hkNow().getTime());
+  d.setDate(d.getDate() + (offset || 0));
+  const fmt = new Intl.DateTimeFormat("en-GB", { timeZone: "Asia/Hong_Kong", year: "numeric", month: "2-digit", day: "2-digit" });
+  const p = {};
+  for (const x of fmt.formatToParts(d)) p[x.type] = x.value;
+  return p.year + "-" + p.month + "-" + p.day;
+}
+(function discardStaleSnapshot() {
+  const m = String(lastOk).match(/^(\d{4}-\d{2}-\d{2})/);
+  if (!m || m[1] !== hkYmd(0)) ROWS = [];
+})();
+function pruneDutyCache(rows) {
+  const today = hkYmd(0), tomorrow = hkYmd(1);
+  return (rows || []).filter(r => r && (r.ymd === today || r.ymd === tomorrow));
+}
+function dutyYmd(r) {
+  if (r && r.ymd) return r.ymd;
+  if (r && r.date === "tomorrow") return hkYmd(1);
+  if (r && /^\d{4}-\d{2}-\d{2}$/.test(r.date || "")) return r.date;
+  return hkYmd(0);
+}
+function dayStamp(ymd, timeStr) {
+  const hm = parseHms(timeStr);
+  if (!hm || !ymd) return null;
+  return new Date(ymd + "T" + pad2(hm.h) + ":" + pad2(hm.m) + ":" + pad2(hm.s) + "+08:00");
+}
+function actualStamp(timeStr, r) {
+  const opYmd = (r && (r.opYmd || r.ymd)) || dutyYmd(r);
+  let at = dayStamp(opYmd, timeStr);
+  if (!at) return null;
+  const schedYmd = (r && r.schedYmd) || opYmd;
+  const std = r ? dayStamp(schedYmd, r.std) : null;
+  if (schedYmd === opYmd && std && at.getTime() < std.getTime() - 6 * 60 * 60 * 1000) {
+    at = new Date(at.getTime() + 24 * 60 * 60 * 1000);
+  }
+  return at;
+}
+function hiddenByTime(r) {
+  const t = r.atd || (isActualStatus(r.status) ? (r.etd || r.std) : "");
+  if (!t) return false;
+  const at = actualStamp(t, r);
+  if (!at) return false;
+  const now = hkNow();
+  const waitMs = r.dir === "arr" ? 90 * 60 * 1000 : 60 * 60 * 1000;
+  return now.getTime() - at.getTime() > waitMs;
+}
+
+const DONE_HIDE_STORE = "hkg_fb_done_hidden";
+let doneHidden = new Set();
+try {
+  const savedHide = JSON.parse(localStorage.getItem(DONE_HIDE_STORE) || "[]");
+  if (Array.isArray(savedHide)) {
+    doneHidden = new Set(savedHide.map(k => {
+      const parts = String(k || "").split("|");
+      if (parts.length < 3) return String(k || "");
+      return myOrderKeyFromParts(parts[0], parts[1], parts.slice(2).join("|")) || String(k || "");
+    }).filter(Boolean));
+  }
+} catch (e) {}
+function saveDoneHidden() {
+  try { localStorage.setItem(DONE_HIDE_STORE, JSON.stringify([...doneHidden])); } catch (e) {}
+}
+function doneHideKeyFromParts(ymd, dir, flight) {
+  return myOrderKeyFromParts(ymd, dir || "dep", flight);
+}
+function hiddenByDone(r) {
+  const k = myOrderKey(r);
+  return !!(k && doneHidden.has(k));
+}
+function isHidden(r) {
+  return hiddenByTime(r) || hiddenByDone(r);
+}
+
+function removeFlightsFromLocalMyOrder(flights) {
+  (flights || []).forEach(f => {
+    const ymd = orderYmd(f.ymd || f.date);
+    const fl = flightKey(f.flight);
+    if (!ymd || !fl) return;
+    const dirs = [];
+    const raw = String(f.dir || "").toLowerCase();
+    if (raw === "arr" || raw === "a") dirs.push("A", "arr");
+    else if (raw === "dep" || raw === "d") dirs.push("D", "dep");
+    else dirs.push("A", "D", "arr", "dep");
+    dirs.forEach(dir => {
+      const mk = myOrderKeyFromParts(ymd, dir, fl);
+      if (mk) myOrder.delete(mk);
+    });
+    const loose = ymd + "||" + fl;
+    myOrder.delete(loose);
+    myOrderTimes.delete(loose);
+    [...myOrderInfo.keys()].forEach(ik => {
+      if (ik === loose || ik.startsWith(loose + "|")) myOrderInfo.delete(ik);
+    });
+    [...selected].forEach(k => {
+      const parts = String(k).split("|");
+      if (parts.length < 3) return;
+      const ky = orderYmd(parts[0]);
+      const kf = flightKey(parts.slice(2).join("|"));
+      if (ky === ymd && kf === fl) selected.delete(k);
+    });
+  });
+  if (!hasMyOrderData()) state.myOrderOn = false;
+  saveMyOrder();
+  savePicks();
+}
+
+function ymdsFromFlights(flights) {
+  const days = new Set();
+  (flights || []).forEach(f => {
+    const ymd = orderYmd(f.ymd || f.date);
+    if (ymd) days.add(ymd);
+  });
+  return [...days];
+}
+function rememberDoneFlights(flights) {
+  (flights || []).forEach(f => {
+    const k = doneHideKeyFromParts(f.ymd || f.date, f.dir || "dep", f.flight);
+    if (k) doneHidden.add(k);
+  });
+  // Drop hidden rows from the current tick set.
+  [...selected].forEach(k => {
+    const parts = String(k).split("|");
+    if (parts.length < 3) return;
+    const hk = myOrderKeyFromParts(parts[0], parts[1], parts.slice(2).join("|"));
+    if (hk && doneHidden.has(hk)) selected.delete(k);
+  });
+  saveDoneHidden();
+  savePicks();
+  removeFlightsFromLocalMyOrder(flights);
+  const days = ymdsFromFlights(flights);
+  if (days.length) schedulePersistPrune(days, flights);
+  return days;
+}
+async function pullSentDoneHides() {
+  try {
+    const { res, data } = await authFetch("/api/done?mine=1");
+    if (!res.ok || !data || !data.ok) return;
+    applyEscortLocksFromJobs(data.jobs || []);
+    (data.jobs || []).forEach(job => {
+      if (String((job && job.status) || "") !== "sent") return;
+      if (escortActionOf(job) !== "done") return;
+      rememberDoneFlights(job.flights || []);
+    });
+    syncEscortButtons();
+  } catch (e) {}
+}
+
+function visibleMyOrderCount() {
+  const seen = new Set();
+  let n = 0;
+  for (const r of ROWS || []) {
+    if (!myOrderHas(r) || isHidden(r)) continue;
+    const k = myOrderKey(r) || rowKey(r);
+    if (!k || seen.has(k)) continue;
+    seen.add(k);
+    n++;
+  }
+  return n;
+}
+
+function statusClass(s) {
+  const x = (s || "").toLowerCase();
+  if (x.includes("cancel")) return "bad";
+  if (x === "est" || x === "est at" || x.includes("delay") || x.includes("est")) return "warn";
+  if (x === "dep" || x === "at gate" || x === "gate closed" || x === "landed") return "done";
+  return "";
+}
+function statusTone(s) {
+  const c = statusClass(s);
+  return c === "bad" ? "st-bad" : c === "warn" ? "st-warn" : c === "done" ? "st-done" : "";
+}
+function kindLabel(r) { return isCargo(r) ? "貨機" : "客機"; }
+function srcLabel(s) { return s || "—"; }
+function pass(r) {
+  if (isHidden(r)) return false;
+  if (state.q) {
+    const q = state.q.toLowerCase();
+    const bag = (r.flight + " " + r.route + " " + r.type + " " + r.st + " " + r.ha + " " + (r.src||"")).toLowerCase();
+    if (!bag.includes(q)) return false;
+  }
+  if (state.myOrderOn && hasMyOrderData()) return myOrderHas(r);
+  if (state.date !== "all") {
+    const tabYmd = state.date === "today" ? hkYmd(0) : state.date === "tomorrow" ? hkYmd(1) : state.date;
+    const rowYmd = r.ymd || dutyYmd(r);
+    if (rowYmd !== tabYmd) return false;
+  }
+  if (state.dir !== "all" && r.dir !== state.dir) return false;
+  if (!isAllAirlines() && selectedAirlines().indexOf(r.al) < 0) return false;
+  if (state.kind === "pax" && isCargo(r)) return false;
+  if (state.kind === "cargo" && !isCargo(r)) return false;
+  return true;
+}
+function timeKey(r) { return hhmm(r.atd || r.etd || r.std).replace("—", "99:99"); }
+function rowSort(a, b) {
+  const ay = dutyYmd(a), by = dutyYmd(b);
+  if (ay !== by) return ay < by ? -1 : 1;
+  return timeKey(a).localeCompare(timeKey(b));
+}
+function selectedAirlines() {
+  return Array.isArray(state.al) ? state.al.filter(a => AIRLINES.indexOf(a) >= 0) : [];
+}
+function isAllAirlines() {
+  const als = selectedAirlines();
+  return !als.length || als.length === AIRLINES.length;
+}
+function toggleAirline(val) {
+  if (val === "all") { state.al = "all"; return; }
+  let als = isAllAirlines() ? [] : selectedAirlines().slice();
+  const i = als.indexOf(val);
+  if (i >= 0) als.splice(i, 1);
+  else als.push(val);
+  state.al = (!als.length || als.length === AIRLINES.length) ? "all" : als;
+}
+function renderSeg(id, key, opts) {
+  const el = document.getElementById(id);
+  el.innerHTML = opts.map(([val, lab]) =>
+    `<button type="button" data-val="${val}" class="${state[key]===val?"on":""}">${lab}</button>`
+  ).join("");
+  el.querySelectorAll("button").forEach(btn => {
+    btn.addEventListener("click", () => {
+      if (state.myOrderOn) { state.myOrderOn = false; saveMyOrder(); }
+      state[key] = btn.getAttribute("data-val");
+      saveFilters();
+      render();
+    });
+  });
+}
+function renderAirlineSeg() {
+  const el = document.getElementById("f-al");
+  const allOn = !state.myOrderOn && isAllAirlines();
+  const als = selectedAirlines();
+  const myOn = !!(state.myOrderOn && hasMyOrderData());
+  const opts = [["all","全部航空"]].concat(AIRLINES.map(a => [a, a]));
+  const myLab = "MyOrder" + (hasMyOrderData() ? " (" + visibleMyOrderCount() + ")" : "");
+  const myBtn = `<button type="button" data-val="myorder" class="${myOn?"on":""}"${hasMyOrderData()?"":" disabled"}>${myLab}</button>`;
+  el.innerHTML = myBtn + opts.map(([val, lab]) => {
+    const on = !myOn && (val === "all" ? allOn : (!allOn && als.indexOf(val) >= 0));
+    return `<button type="button" data-val="${val}" class="${on?"on":""}">${lab}</button>`;
+  }).join("");
+  el.querySelectorAll("button").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const val = btn.getAttribute("data-val");
+      if (val === "myorder") {
+        if (!hasMyOrderData()) return;
+        state.myOrderOn = !state.myOrderOn;
+        saveMyOrder();
+        render();
+        return;
+      }
+      if (state.myOrderOn) state.myOrderOn = false;
+      toggleAirline(val);
+      saveFilters();
+      saveMyOrder();
+      render();
+    });
+  });
+}
+function cell(v) { return v ? esc(v) : "—"; }
+function orderInfoOf(r) {
+  const ymd = (r && (r.ymd || r.opYmd)) || orderYmd(r && r.date) || dutyYmd(r);
+  const fl = flightKey(r && r.flight);
+  if (!ymd || !fl) return "";
+  for (const tm of rowTimes(r)) {
+    const v = myOrderInfo.get(ymd + "||" + fl + "|" + tm);
+    if (v) return v;
+  }
+  return myOrderInfo.get(ymd + "||" + fl) || "";
+}
+function infoCellHtml(r) {
+  const s = orderInfoOf(r);
+  if (!s) return "—";
+  return s.split(/\n+/).filter(Boolean).map(line => `<span class="info-code">${esc(line)}</span>`).join("<br>");
+}
+function table(list, dir) {
+
+  if (!list.length) return '<div class="empty">呢個篩選暫時無航班。</div>';
+  const allOn = list.length && list.every(r => selected.has(rowKey(r)));
+  const pickHead = `<th class="pick"><input type="checkbox" class="pick-box pick-all" data-dir="${dir}" ${allOn?"checked":""} aria-label="全選呢列表"></th>`;
+  const showInfo = list.some(r => orderInfoOf(r));
+  const infoHead = showInfo ? "<th class=\"info\">Loading</th>" : "";
+  const acHead = "<th class=\"ac-reg\">AC/REG</th>";
+  const head = dir === "arr"
+    ? `<tr>${pickHead}<th>航班</th><th class="time">STA</th><th class="time">ETA</th><th class="time">ATA</th><th>停機位</th>${infoHead}${acHead}<th>狀態</th><th>機型</th><th>航線</th><th>行李帶</th><th>客／貨</th><th>HA</th></tr>`
+    : `<tr>${pickHead}<th>航班</th><th class="time">STD</th><th class="time">ETD</th><th class="time">ATD</th><th>停機位</th>${infoHead}${acHead}<th>狀態</th><th>機型</th><th>航線</th><th>客／貨</th><th>HA</th></tr>`;
+  const body = list.map(r => {
+    const cargo = isCargo(r);
+    const kind = `<span class="pill${cargo?" cargo":""}">${kindLabel(r)}</span>`;
+    const cap = (r.cap === 0 || r.cap === null || r.cap === undefined) ? "" : " · " + esc(r.cap);
+    const times = `<td class="time">${hhmm(r.std)}</td><td class="time">${hhmm(r.etd)}</td><td class="time">${hhmm(r.atd)}</td>`;
+    const stCell = `<td class="${statusTone(r.status)}">${cell(r.status)}</td>`;
+    const on = selected.has(rowKey(r));
+    const pick = `<td class="pick"><input type="checkbox" class="pick-box" data-key="${esc(rowKey(r))}" ${on?"checked":""} aria-label="選擇 ${esc(r.flight)}"></td>`;
+    const infoCell = showInfo ? `<td class="info">${infoCellHtml(r)}</td>` : "";
+    const mid = `${pick}<td class="flight">${esc(r.flight)}</td>${times}<td>${cell(primaryStand(r.st))}</td>${infoCell}<td class="ac-reg">${cell(r.reg)}</td>${stCell}<td>${r.type?esc(r.type)+cap:"—"}</td><td>${cell(r.route)}</td>`;
+    if (dir === "arr") {
+      return `<tr class="${cargo?"cargo":"pax"}">${mid}<td>${cell(r.br)}</td><td>${kind}</td><td>${cell(r.ha)}</td></tr>`;
+    }
+    return `<tr class="${cargo?"cargo":"pax"}">${mid}<td>${kind}</td><td>${cell(r.ha)}</td></tr>`;
+  }).join("");
+  return `<table><thead>${head}</thead><tbody>${body}</tbody></table>`;
+}
+function setStatus() {
+  const el = document.getElementById("status");
+  const pick = selected.size ? ("已選 " + selected.size + " 班 · ") : "";
+  if (liveOk === true) el.textContent = pick + "已自動更新 · " + lastOk + " · 每 15 分鐘刷新";
+  else if (liveOk === false) el.textContent = pick + "未能連來源自動更新，已用快照同手動重新套用隱藏規則 · " + lastOk;
+  else el.textContent = pick + "快照模式 · " + lastOk + " · 每 15 分鐘會再套用隱藏規則";
+}
+function filtersSig() {
+  return [
+    state.date, state.dir, JSON.stringify(state.al), state.kind,
+    state.myOrderOn ? "1" : "0",
+    hasMyOrderData() ? "1" : "0",
+    String(visibleMyOrderCount()),
+    String(myOrder.size)
+  ].join("|");
+}
+let lastFilterSig = "";
+let renderFrame = 0;
+function scheduleRender() {
+  if (renderFrame) return;
+  renderFrame = requestAnimationFrame(() => {
+    renderFrame = 0;
+    render();
+  });
+}
+function render() {
+  const sig = filtersSig();
+  if (sig !== lastFilterSig) {
+    lastFilterSig = sig;
+    renderSeg("f-date", "date", dateTabs());
+    renderSeg("f-dir", "dir", [["arr","入口"],["dep","離港"]]);
+    renderAirlineSeg();
+    renderSeg("f-kind", "kind", [["pax","客機"],["cargo","貨機"]]);
+  }
+  const myView = !!(state.myOrderOn && hasMyOrderData());
+  const showArr = myView || state.dir !== "dep";
+  const showDep = myView || state.dir !== "arr";
+  const arrList = showArr ? ROWS.filter(r => r.dir === "arr" && pass(r)).sort(rowSort) : [];
+  const depList = showDep ? ROWS.filter(r => r.dir === "dep" && pass(r)).sort(rowSort) : [];
+  document.getElementById("sec-arr").style.display = (showArr && (arrList.length || !myView)) ? "" : "none";
+  document.getElementById("sec-dep").style.display = (showDep && (depList.length || !myView)) ? "" : "none";
+  document.getElementById("c-arr").textContent = showArr ? "（" + arrList.length + "）" : "";
+  document.getElementById("c-dep").textContent = showDep ? "（" + depList.length + "）" : "";
+  document.getElementById("box-arr").innerHTML = table(arrList, "arr");
+  document.getElementById("box-dep").innerHTML = table(depList, "dep");
+  const ymd = orderYmd(state.date);
+  const miscItems = myView ? miscItemsForDate(ymd) : [];
+  const showMisc = myView && miscItems.length && !isMiscHidden(ymd, miscItems);
+  const secMisc = document.getElementById("sec-misc");
+  if (secMisc) secMisc.style.display = showMisc ? "" : "none";
+  const cMisc = document.getElementById("c-misc");
+  if (cMisc) cMisc.textContent = showMisc ? "（" + miscItems.length + "）" : "";
+  const boxMisc = document.getElementById("box-misc");
+  if (boxMisc) {
+    boxMisc.innerHTML = showMisc
+      ? '<ul class="misc-list">' + miscItems.map(s => "<li>" + esc(s) + "</li>").join("") + "</ul>"
+      : "";
+  }
+  bindPicks();
+  syncPickChrome();
+  syncEscortButtons();
+}
+function syncPickChrome() {
+  const n = selected.size;
+  const cm = document.getElementById("btn-clear-myorder");
+  const cp = document.getElementById("btn-clear-picks");
+  const sm = document.getElementById("btn-save-myorder");
+  if (cm) {
+    cm.hidden = !hasMyOrderData();
+    cm.textContent = "清除 MyOrder" + (hasMyOrderData() ? " (" + visibleMyOrderCount() + ")" : "");
+  }
+  if (cp) {
+    cp.hidden = !n;
+    cp.textContent = "清除已選" + (n ? " (" + n + ")" : "");
+  }
+  if (sm) {
+    sm.hidden = !n;
+    sm.textContent = (myOrder.size ? "更新 MyOrder" : "存為 MyOrder") + " (" + n + ")";
+  }
+  document.querySelectorAll("input.pick-all").forEach(el => {
+    const dir = el.getAttribute("data-dir");
+    const boxes = [...document.querySelectorAll("#box-" + dir + " input.pick-box[data-key]")];
+    el.checked = boxes.length > 0 && boxes.every(b => b.checked);
+  });
+  setStatus();
+}
+function onPickChange(e) {
+  const el = e.target;
+  if (!el || !el.classList || !el.classList.contains("pick-box")) return;
+  if (el.classList.contains("pick-all")) {
+    const dir = el.getAttribute("data-dir");
+    document.querySelectorAll("#box-" + dir + " input.pick-box[data-key]").forEach(b => {
+      const k = b.getAttribute("data-key");
+      if (el.checked) { selected.add(k); b.checked = true; }
+      else { selected.delete(k); b.checked = false; }
+    });
+  } else {
+    const k = el.getAttribute("data-key");
+    if (!k) return;
+    if (el.checked) selected.add(k);
+    else selected.delete(k);
+  }
+  savePicks();
+  if (!selected.size) state.onlyPicked = false;
+  syncPickChrome();
+  syncEscortButtons();
+}
+function bindPicks() {
+  ["box-arr", "box-dep"].forEach(id => {
+    const box = document.getElementById(id);
+    if (!box || box.dataset.pickBound) return;
+    box.dataset.pickBound = "1";
+    box.addEventListener("change", onPickChange);
+  });
+}
+function airlineOf(flight) {
+  const main = String(flight || "").replace(/\s+/g,"").toUpperCase();
+  const codes = AIRLINES.slice().sort((a,b) => b.length - a.length);
+  for (const a of codes) {
+    if (main.startsWith(a) && (main.length === a.length || (main.length > a.length && /\d/.test(main.charAt(a.length))))) return a;
+  }
+  return null;
+}
+function normNo(no) { return String(no || "").replace(/\s+/g, "").toUpperCase(); }
+const ICAO = {CX:"CPA",LH:"DLH",LD:"AHK",LX:"SWR","3S":"BOX",NH:"ANA",C6:"MFX",MS:"MSR",CK:"CKK",MU:"CES","6E":"IGO"};
+const ICAO_TO_IATA = {CPA:"CX",DLH:"LH",GEC:"LH",AHK:"LD",DHK:"LD",SWR:"LX",BOX:"3S",ANA:"NH",MFX:"C6",MSR:"MS",CKK:"CK",CES:"MU",IGO:"6E"};
+function flightKey(no) {
+  let s = normNo(no);
+  if (!s) return "";
+  for (const icao of Object.keys(ICAO_TO_IATA)) {
+    if (s.startsWith(icao) && s.length > icao.length && /\d/.test(s.charAt(icao.length))) {
+      s = ICAO_TO_IATA[icao] + s.slice(icao.length);
+      break;
+    }
+  }
+  const al = airlineOf(s);
+  if (!al) return s;
+  const m = s.slice(al.length).match(/^0*(\d+)(.*)$/);
+  return m ? al + m[1] + (m[2] || "") : s;
+}
+function callsignOf(al, flight, cargo, icao) {
+  const prefix = String(icao || (al === "LH" && cargo ? "GEC" : (ICAO[al] || ""))).toUpperCase();
+  if (!prefix) return "";
+  const no = normNo(flight);
+  let rest = (al && no.startsWith(al)) ? no.slice(al.length) : no;
+  rest = rest.replace(/^[^0-9]+/, "") || rest;
+  return prefix + rest;
+}
+function fvPath() {
+  if (/menziescnac\.com$/i.test(location.hostname)) return "/data2";
+  if (location.protocol === "https:") return "/api/fv";
+  return "https://fv.menziescnac.com/data2";
+}
+async function fetchJson(url, opts, ms) {
+  const ctrl = new AbortController();
+  const t = setTimeout(() => ctrl.abort(), ms || 8000);
+  try {
+    const res = await fetch(url, Object.assign({ credentials: "same-origin" }, opts || {}, { signal: ctrl.signal }));
+    if (res.status === 401) {
+      onAuthExpired();
+      throw new Error("http 401");
+    }
+    if (!res.ok) throw new Error("http " + res.status);
+    return await res.json();
+  } finally { clearTimeout(t); }
+}
+async function poolMap(items, limit, fn) {
+  const out = new Array(items.length);
+  let i = 0;
+  async function worker() {
+    while (i < items.length) {
+      const idx = i++;
+      try { out[idx] = await fn(items[idx], idx); }
+      catch (e) { out[idx] = e; }
+    }
+  }
+  await Promise.all(Array.from({ length: Math.min(limit || 5, items.length) }, worker));
+  return out;
+}
+async function fetchJsonRetry(url, opts, ms, tries) {
+  let last;
+  for (let i = 0; i < (tries || 3); i++) {
+    try { return await fetchJson(url, opts, ms); }
+    catch (e) {
+      last = e;
+      await new Promise(res => setTimeout(res, 400 * (i + 1)));
+    }
+  }
+  throw last;
+}
+let fvActive = 0;
+const fvWaiters = [];
+async function withFvSlot(fn) {
+  if (fvActive >= 2) await new Promise(res => fvWaiters.push(res));
+  fvActive++;
+  try { return await fn(); }
+  finally {
+    fvActive--;
+    const n = fvWaiters.shift();
+    if (n) n();
+  }
+}
+function fvClockToDate(clock, now) {
+  const m = String(clock || "").trim().match(/^(\d{1,2}):(\d{2})(?::(\d{2}))?$/);
+  if (!m) return null;
+  now = now || hkNow();
+  const ymd = hkYmdOf(now);
+  const stamp = new Date(ymd + "T" + pad2(+m[1]) + ":" + pad2(+m[2]) + ":" + pad2(+(m[3] || 0)) + "+08:00");
+  if (stamp.getTime() > now.getTime() + 10 * 60 * 1000) return new Date(stamp.getTime() - 24 * 60 * 60 * 1000);
+  return stamp;
+}
+function isFvFeedStale(clock, now) {
+  const t = fvClockToDate(clock, now);
+  if (!t) return false;
+  return (now || hkNow()).getTime() - t.getTime() > 2 * 60 * 60 * 1000;
+}
+function dropStaleFvActuals(rec) {
+  if (!rec) return rec;
+  rec.fvStale = true;
+  rec.atd = "";
+  if (isActualStatus(rec.status)) rec.status = hasVal(rec.etd) ? "Est at" : "";
+  rec.st = "";
+  rec.br = "";
+  return rec;
+}
+async function fetchFvOne(airline, arrDep, dateFilter, onPage) {
+  const base = fvPath();
+  const q = "&ha_filter=all&flight_id=" + encodeURIComponent(airline) + "&date_filter=" + dateFilter + "&arr_dep=" + arrDep;
+  const first = await withFvSlot(() => fetchJsonRetry(base + "?page=1" + q, { headers: { "Accept": "application/json" } }, 20000));
+  const stale = isFvFeedStale(first && first.last_update_time);
+  let rows = first.rows || [];
+  if (onPage && rows.length) onPage(rows, stale);
+  const total = first.total_pages || 1;
+  if (total < 2) return rows;
+  const pages = [];
+  for (let p = 2; p <= total; p++) pages.push(p);
+  const rest = await poolMap(pages, 2, p => withFvSlot(() => fetchJsonRetry(base + "?page=" + p + q, { headers: { "Accept": "application/json" } }, 20000)));
+  rest.forEach(data => {
+    if (data && data.rows) {
+      rows = rows.concat(data.rows);
+      if (onPage) onPage(data.rows, stale);
+    }
+  });
+  return rows;
+}
+function normalizeFv(r, dateFilter, arrDep, stale) {
+  const flight = normNo(r.Flight || "");
+  if (String(r.Flight || "").includes("[")) return null;
+  const al = airlineOf(flight);
+  if (!al) return null;
+  const t = (r.T || "").toUpperCase();
+  const cargo = isCargo({ al, t, type: r.Type || "", flight });
+  if (al === "3S" && !cargo) return null;
+  const arr = arrDep === "a";
+  const ymd = dateFilter === "tomorrow" ? hkYmd(1) : (dateFilter === "today" ? hkYmd(0) : (dateFilter === "yesterday" ? hkYmd(-1) : dateFilter));
+  return {
+    date: dateFilter, dir: arr ? "arr" : "dep", al: al, flight: flight, t: t, ymd: ymd, schedYmd: ymd,
+    type: r.Type || "", cap: r.Capacity, route: r.From || "",
+    std: (arr ? r.STA : r.STD) || "", etd: (arr ? r.ETA : r.ETD) || "", atd: (arr ? r.ATA : r.ATD) || "",
+    br: r.BR || "", st: primaryStand(r.ST || ""), ha: r.HA || "", status: r.Status || "", src: "FV",
+    cs: callsignOf(al, flight, cargo, "")
+  };
+}
+function parseStatusYmd(s) {
+  const m = String(s || "").match(/\((\d{1,2})\/(\d{1,2})\/(\d{4})\)/);
+  if (!m) return "";
+  return m[3] + "-" + pad2(+m[2]) + "-" + pad2(+m[1]);
+}
+function shiftYmd(ymd, days) {
+  if (!ymd) return "";
+  const d = new Date(ymd + "T12:00:00+08:00");
+  d.setDate(d.getDate() + (days || 0));
+  return hkYmdOf(d);
+}
+function dateFilterFromYmd(ymd) {
+  if (!ymd || ymd === hkYmd(0)) return "today";
+  if (ymd === hkYmd(1)) return "tomorrow";
+  return ymd;
+}
+function dutyDateKeys(rOrYmd) {
+  let ymd = "", date = "";
+  if (rOrYmd && typeof rOrYmd === "object") {
+    ymd = rOrYmd.ymd || rOrYmd.opYmd || "";
+    date = rOrYmd.date || "";
+  } else {
+    ymd = rOrYmd || "";
+  }
+  if (!ymd) {
+    if (date === "today") ymd = hkYmd(0);
+    else if (date === "tomorrow") ymd = hkYmd(1);
+    else if (/^\d{4}-\d{2}-\d{2}$/.test(date)) ymd = date;
+  }
+  if (!ymd && !date) return [];
+  const keys = [];
+  function add(v) { if (v && keys.indexOf(v) < 0) keys.push(v); }
+  add(ymd);
+  // Only alias today/tomorrow when they match this row's calendar date.
+  // A leftover "today" label from yesterday must not also key as today's ymd.
+  if (ymd === hkYmd(0)) add("today");
+  else if (ymd === hkYmd(1)) add("tomorrow");
+  return keys;
+}
+function dropFutureActuals(r) {
+  const rec = Object.assign({}, r);
+  if (!hasVal(rec.atd)) return rec;
+  const at = actualStamp(rec.atd, rec);
+  if (at && at.getTime() > hkNow().getTime() + 5 * 60 * 1000) {
+    rec.atd = "";
+    if (isActualStatus(rec.status)) rec.status = hasVal(rec.etd) ? "Est at" : "";
+  }
+  return rec;
+}
+function isDateFilter(v) {
+  return v === "today" || v === "tomorrow" || /^\d{4}-\d{2}-\d{2}$/.test(v || "");
+}
+function dateTabLabel(df) {
+  let ymd = df;
+  if (df === "today") ymd = hkYmd(0);
+  else if (df === "tomorrow") ymd = hkYmd(1);
+  const m = String(ymd || "").match(/^\d{4}-(\d{2})-(\d{2})$/);
+  if (!m) return df;
+  const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  return String(+m[2]) + months[+m[1] - 1];
+}
+function dateTabs() {
+  return [
+    ["today", dateTabLabel("today")],
+    ["tomorrow", dateTabLabel("tomorrow")]
+  ];
+}
+function flightKeyBase(no) {
+  return flightKey(no).replace(/D$/i, "");
+}
+loadMyOrder();
+function parseHkiaStatus(s) {
+  s = String(s || "").trim();
+  if (!s) return { label: "", time: "", ymd: "" };
+  const ymd = parseStatusYmd(s);
+  const m = s.match(/^(At gate|Dep|Est at|Landed|Cancelled)\s*(\d{1,2}:\d{2})?(?::\d{2})?(?:\s*\(\d{1,2}\/\d{1,2}\/\d{4}\))?$/i);
+  if (!m) {
+    const m2 = s.match(/(\d{1,2}:\d{2})(?::\d{2})?/);
+    return { label: s, time: m2 ? m2[1] : "", ymd: ymd };
+  }
+  const map = { "at gate": "At gate", dep: "Dep", "est at": "Est at", landed: "Landed", cancelled: "Cancelled" };
+  return { label: map[m[1].toLowerCase()] || m[1], time: m[2] || "", ymd: ymd };
+}
+function stripStaleActuals(r) {
+  const rec = dropFutureActuals(r);
+  if (!hasVal(rec.atd) || !hasVal(rec.std)) return rec;
+  const at = actualStamp(rec.atd, rec);
+  const schedYmd = rec.schedYmd || rec.ymd || dutyYmd(rec);
+  const stdAt = dayStamp(schedYmd, rec.std);
+  if (!stdAt || !at) return rec;
+  if (at.getTime() < stdAt.getTime() - 6 * 60 * 60 * 1000) {
+    rec.atd = "";
+    if (isActualStatus(rec.status)) rec.status = hasVal(rec.etd) ? "Est at" : "";
+    rec.st = "";
+    rec.reg = "";
+  }
+  return rec;
+}
+function applyDayDelay(r) {
+  if (!r) return r;
+  const hadActual = hasVal(r.atd) || isActualStatus(r.status);
+  const rec = stripStaleActuals(r);
+  const sched = rec.schedYmd || (rec.dayDelay ? "" : rec.ymd) || dutyYmd(rec);
+  let op = rec.opYmd || "";
+  if (!op && sched) {
+    const stdAt = dayStamp(sched, rec.std);
+    const probe = hasVal(rec.atd) ? rec.atd : rec.etd;
+    const opAt = dayStamp(sched, probe);
+    if (stdAt && opAt && opAt.getTime() < stdAt.getTime() - 6 * 60 * 60 * 1000) {
+      // Already-operated actuals on an early-morning clock belong to yesterday's
+      // schedule (FV often keeps them under "today"). Only estimates shift op
+      // to tomorrow. The 6h threshold itself is unchanged.
+      if (hadActual) {
+        rec.schedYmd = shiftYmd(sched, -1);
+        rec.opYmd = sched;
+        rec.ymd = sched;
+        rec.date = dateFilterFromYmd(sched);
+        const fl = normNo(rec.flight);
+        if (fl && !/D$/i.test(fl)) rec.flight = fl + "D";
+        rec.dayDelay = true;
+        return rec;
+      }
+      op = shiftYmd(sched, 1);
+    }
+  }
+  if (sched && op && op > sched) {
+    const fl = normNo(rec.flight);
+    if (fl && !/D$/i.test(fl)) rec.flight = fl + "D";
+    rec.schedYmd = sched;
+    rec.opYmd = op;
+    rec.ymd = op;
+    rec.date = dateFilterFromYmd(op);
+    rec.dayDelay = true;
+  } else if (rec.dayDelay || /D$/i.test(normNo(rec.flight))) {
+    rec.flight = normNo(rec.flight).replace(/D$/i, "");
+    if (sched) {
+      rec.ymd = sched;
+      rec.date = dateFilterFromYmd(sched);
+    }
+    rec.dayDelay = false;
+    rec.opYmd = "";
+  }
+  return rec;
+}
+function timesFarBeforeStd(ymd, timeStr, std) {
+  const stdAt = dayStamp(ymd, std);
+  const at = dayStamp(ymd, timeStr);
+  return !!(stdAt && at && at.getTime() < stdAt.getTime() - 6 * 60 * 60 * 1000);
+}
+function timeLaterThan(ymd, a, b) {
+  if (timesFarBeforeStd(ymd, a, b)) return true;
+  if (timesFarBeforeStd(ymd, b, a)) return false;
+  const ta = dayStamp(ymd, a), tb = dayStamp(ymd, b);
+  return !!(ta && tb && ta.getTime() > tb.getTime());
+}
+function distinctEtd(rec) {
+  return hasVal(rec && rec.etd) && (!hasVal(rec.std) || hhmm(rec.etd) !== hhmm(rec.std));
+}
+function schedYmdOf(r) {
+  return (r && (r.schedYmd || r.ymd || dutyYmd(r))) || "";
+}
+function adoptDelayedTime(rec, otherTime, ymd) {
+  if (!rec || !hasVal(otherTime)) return rec;
+  if (!hasVal(rec.std)) { rec.std = otherTime; return rec; }
+  if (hhmm(rec.std) === hhmm(otherTime)) return rec;
+  const day = ymd || schedYmdOf(rec);
+  if (distinctEtd(rec)) {
+    if (timeLaterThan(day, rec.std, otherTime)) rec.std = otherTime;
+    return rec;
+  }
+  if (timeLaterThan(day, otherTime, rec.std)) rec.etd = otherTime;
+  else { rec.etd = rec.std; rec.std = otherTime; }
+  return rec;
+}
+
+function isMovedDayDelayOf(prev, rec) {
+  const base = flightKeyBase(prev.flight);
+  if (!base || /D$/i.test(flightKey(prev.flight))) return false;
+  if (rec.dir !== prev.dir || flightKey(rec.flight) !== base + "D") return false;
+  if (prev.std && rec.std && hhmm(prev.std) !== hhmm(rec.std)) return false;
+  if (prev.schedYmd && rec.schedYmd && prev.schedYmd === rec.schedYmd) return true;
+  const prevDay = prev.ymd || dutyYmd(prev);
+  const recDay = rec.ymd || dutyYmd(rec);
+  if (prevDay && recDay && prevDay === recDay) {
+    if (hasVal(prev.reg) && hasVal(rec.reg) && prev.reg === rec.reg) return true;
+    if (hasVal(prev.st) && hasVal(rec.st) && prev.st === rec.st) return true;
+    if (hasVal(prev.atd) && hasVal(rec.atd) && hhmm(prev.atd) === hhmm(rec.atd)) return true;
+    if (hasVal(prev.etd) && hasVal(rec.etd) && hhmm(prev.etd) === hhmm(rec.etd)) return true;
+    const ymd = prev.schedYmd || prev.ymd || dutyYmd(prev);
+    if (hasVal(prev.atd) && timesFarBeforeStd(ymd, prev.atd, prev.std)) return true;
+  }
+  return false;
+}
+function absorbDayDelayFields(dst, src) {
+  dst.atd = fillVal(dst.atd, src.atd);
+  dst.etd = fillVal(dst.etd, src.etd);
+  dst.st = fillVal(dst.st, src.st);
+  dst.reg = fillVal(dst.reg, src.reg);
+  dst.type = fillVal(dst.type, src.type);
+  dst.cap = fillVal(dst.cap, src.cap);
+  dst.br = fillVal(dst.br, src.br);
+  dst.ha = fillVal(dst.ha, src.ha);
+  dst.cs = fillVal(dst.cs, src.cs);
+  dst.route = fillVal(dst.route, src.route);
+  if ((src.t || "").toUpperCase() === "F" || (src.t || "").toUpperCase() === "H") dst.t = src.t;
+  if (src.status && (!dst.status || (isActualStatus(src.status) && !isActualStatus(dst.status)))) dst.status = src.status;
+  applyActualRules(dst);
+}
+function dropMovedDayDelaySources(rows) {
+  const list = (rows || []).filter(Boolean).map(r => Object.assign({}, r));
+  const delayed = list.filter(r => r.dayDelay || /D$/i.test(flightKey(r.flight)));
+  delayed.forEach(d => {
+    list.forEach(r => {
+      if (!(r.dayDelay || /D$/i.test(flightKey(r.flight))) && isMovedDayDelayOf(r, d)) absorbDayDelayFields(d, r);
+    });
+  });
+  return list.filter(r => {
+    if (r.dayDelay || /D$/i.test(flightKey(r.flight))) return true;
+    return !delayed.some(d => isMovedDayDelayOf(r, d));
+  });
+}
+function foldDayDelays(rows) {
+  const mapped = (rows || []).map(r => applyDayDelay(r));
+  const map = new Map();
+  mapped.forEach(h => {
+    const k = h.date + "|" + h.dir + "|" + h.flight;
+    if (!map.has(k)) { map.set(k, Object.assign({}, h)); return; }
+    const d = map.get(k);
+    d.src = d.src && h.src && d.src !== h.src ? "FV＋HKIA" : (d.src || h.src);
+    if ((h.t || "").toUpperCase() === "F" || (h.t || "").toUpperCase() === "H") d.t = h.t;
+    d.atd = fillVal(d.atd, h.atd);
+    d.std = fillVal(d.std, h.std);
+    d.st = fillVal(d.st, h.st);
+    d.br = fillVal(d.br, h.br);
+    d.cs = fillVal(d.cs, h.cs);
+    d.route = fillVal(d.route, h.route);
+    d.type = fillVal(d.type, h.type);
+    d.cap = fillVal(d.cap, h.cap);
+    d.ha = fillVal(d.ha, h.ha);
+    d.reg = fillVal(d.reg, h.reg);
+    d.schedYmd = (d.schedYmd && h.schedYmd) ? (d.schedYmd < h.schedYmd ? d.schedYmd : h.schedYmd) : fillVal(d.schedYmd, h.schedYmd);
+    d.opYmd = (d.opYmd && h.opYmd) ? (d.opYmd > h.opYmd ? d.opYmd : h.opYmd) : fillVal(d.opYmd, h.opYmd);
+    if (!d.atd && hasVal(h.etd)) d.etd = h.etd;
+    else d.etd = fillVal(d.etd, h.etd);
+    adoptDelayedTime(d, h.std, schedYmdOf(d) || schedYmdOf(h));
+    if (h.status) {
+      if (!d.status || (isActualStatus(h.status) && !isActualStatus(d.status))) d.status = h.status;
+    }
+    applyActualRules(d);
+  });
+  return dropMovedDayDelaySources(Array.from(map.values()).map(applyActualRules));
+}
+function hkiaPath() {
+  if (location.protocol === "https:" && !/hongkongairport\.com$/i.test(location.hostname)) return "/api/hkia";
+  return "https://www.hongkongairport.com/flightinfo-rest/rest/flights";
+}
+async function fetchHkia(dateYmd, arrival, cargo) {
+  const url = hkiaPath() + "?date=" + dateYmd + "&arrival=" + arrival + "&cargo=" + cargo + "&lang=en";
+  return fetchJson(url, { headers: { "Accept": "application/json" }, referrer: "https://www.hongkongairport.com/en/flights/arrivals/passenger.page" }, 8000);
+}
+function dateFilterOf(blockDate, todayYmd, tomorrowYmd) {
+  return dateFilterFromYmd(blockDate);
+}
+function isActualStatus(s) {
+  const x = (s || "").trim().toLowerCase();
+  return x === "at gate" || x === "dep" || x.startsWith("at gate ") || x.startsWith("dep ");
+}
+function timeFromActualStatus(s) {
+  const p = parseHkiaStatus(s);
+  return isActualStatus(p.label) && p.time ? p.time : "";
+}
+function applyActualRules(r) {
+  if (r.dir === "arr") {
+    const st = (r.status || "").toLowerCase();
+    if (st !== "at gate" && hasVal(r.atd)) {
+      if (!hasVal(r.etd)) r.etd = r.atd;
+      r.atd = "";
+    }
+  }
+  return r;
+}
+function normalizeHkia(item, dateFilter, arrival, cargo, ymd) {
+  const fl = item.flight || [];
+  if (!fl.length) return null;
+  const flight = normNo(fl[0].no);
+  const al = airlineOf(flight);
+  if (!al) return null;
+  if (al === "3S" && !cargo) return null;
+  const stt = parseHkiaStatus(item.status);
+  const etd = (stt.label === "Est at" || stt.label === "Landed") ? stt.time : "";
+  const atd = (stt.label === "At gate" || stt.label === "Dep") ? stt.time : "";
+  const route = ((arrival ? item.origin : item.destination) || []).join(" > ");
+  const st = primaryStand(item.stand || (!arrival && item.gate) || "");
+  return {
+    date: dateFilter, dir: arrival ? "arr" : "dep", al: al, flight: flight,
+    t: cargo ? "F" : "J", type: "", cap: null, route: route, ymd: ymd || (dateFilter === "tomorrow" ? hkYmd(1) : hkYmd(0)), schedYmd: ymd || (dateFilter === "tomorrow" ? hkYmd(1) : hkYmd(0)), opYmd: stt.ymd || "",
+    std: item.time || "", etd: etd, atd: atd,
+    br: arrival ? (item.baggage || "") : "", st: st, ha: "", status: stt.label, src: "HKIA",
+    cs: callsignOf(al, flight, cargo, (fl[0] && fl[0].airline) || "")
+  };
+}
+function primaryStand(st) {
+  let s = String(st || "").trim();
+  if (!s) return "";
+  s = s.replace(/\s*\([^)]*\)\s*/g, "").trim();
+  return s;
+}
+function hasVal(v) { return v !== null && v !== undefined && String(v).trim() !== ""; }
+function fillVal(a, b) { return hasVal(a) ? a : (hasVal(b) ? b : (a || b || "")); }
+function isOfficialSrc(r) { return !!(r && /HKIA/i.test(r.src || "")); }
+function dropContradictingFv(fv, hk) {
+  const out = Object.assign({}, fv);
+  if (!hk || !fv) return out;
+  const cargo = isCargo(fv) || isCargo(hk);
+  if (isActualStatus(hk.status)) return out;
+  if (!(isActualStatus(fv.status) || hasVal(fv.atd))) return out;
+  out.atd = "";
+  if (isActualStatus(out.status)) out.status = hasVal(out.etd) ? "Est at" : "";
+  if (!cargo) {
+    out.st = "";
+    out.br = "";
+  }
+  return out;
+}
+function mergeFlightFields(d, h) {
+  const official = isOfficialSrc(d) && !isOfficialSrc(h) ? d : (isOfficialSrc(h) && !isOfficialSrc(d) ? h : null);
+  const fvSide = official === d ? h : (official === h ? d : null);
+  const left = official && fvSide && official === d ? official : (official && fvSide ? dropContradictingFv(d, official) : d);
+  const right = official && fvSide && official === h ? official : (official && fvSide ? dropContradictingFv(h, official) : h);
+  const src = (left.ymd && right.ymd && right.ymd > left.ymd) ? right : left;
+  const other = src === left ? right : left;
+  if (!sameDuty(d, h)) return applyActualRules(Object.assign({}, src));
+  const out = Object.assign({}, src);
+  out.src = (d.src && h.src && d.src !== h.src) ? "FV＋HKIA" : (src.src || other.src);
+  if ((other.t || "").toUpperCase() === "F" || (other.t || "").toUpperCase() === "H") out.t = other.t;
+  const pick = field => official && hasVal(official[field]) ? official[field] : fillVal(src[field], other[field]);
+  out.atd = pick("atd");
+  out.std = pick("std");
+  out.st = pick("st");
+  out.br = pick("br");
+  out.cs = fillVal(src.cs, other.cs);
+  out.route = fillVal(src.route, other.route);
+  out.type = fillVal(src.type, other.type);
+  out.cap = fillVal(src.cap, other.cap);
+  out.ha = fillVal(src.ha, other.ha);
+  out.reg = fillVal(src.reg, other.reg);
+  if (official && !isActualStatus(official.status) && hasVal(official.etd)) out.etd = official.etd;
+  else if (official && hasVal(official.etd)) out.etd = official.etd;
+  else if (!out.atd && hasVal(other.etd)) out.etd = other.etd;
+  else out.etd = fillVal(src.etd, other.etd);
+  adoptDelayedTime(out, other.std, schedYmdOf(out) || schedYmdOf(other));
+  if (official && hasVal(official.status)) out.status = official.status;
+  else if (other.status) {
+    if (!out.status || (isActualStatus(other.status) && !isActualStatus(out.status))) out.status = other.status;
+  }
+  out.schedYmd = (src.schedYmd && other.schedYmd) ? (src.schedYmd < other.schedYmd ? src.schedYmd : other.schedYmd) : fillVal(src.schedYmd, other.schedYmd);
+  out.opYmd = (src.opYmd && other.opYmd) ? (src.opYmd > other.opYmd ? src.opYmd : other.opYmd) : fillVal(src.opYmd, other.opYmd);
+  if (other.dayDelay || src.dayDelay) out.dayDelay = true;
+  return applyActualRules(out);
+}
+
+
+function officialDayDelayKey(r) {
+  const rec = applyDayDelay(Object.assign({}, r));
+  if (!(rec.dayDelay || /D$/i.test(flightKey(rec.flight)))) return "";
+  return flightKeyBase(rec.flight) + "|" + rec.dir + "|" + (rec.schedYmd || "") + "|" + (rec.ymd || rec.opYmd || "");
+}
+function dropUnsupportedDayDelays(rows, hkiaRows) {
+  if (!hkiaRows || !hkiaRows.length) return rows;
+  const supported = new Set();
+  const known = new Set();
+  hkiaRows.forEach(h => {
+    if (!h) return;
+    known.add(flightKeyBase(h.flight) + "|" + h.dir);
+    const k = officialDayDelayKey(h);
+    if (k) supported.add(k);
+  });
+  return (rows || []).filter(r => {
+    if (!(r && (r.dayDelay || /D$/i.test(flightKey(r.flight))))) return true;
+    const base = flightKeyBase(r.flight) + "|" + r.dir;
+    if (!known.has(base)) return true;
+    const k = flightKeyBase(r.flight) + "|" + r.dir + "|" + (r.schedYmd || "") + "|" + (r.ymd || r.opYmd || "");
+    return supported.has(k);
+  });
+}
+function mergeRows(fvRows, hkiaRows) {
+  const map = new Map();
+  const add = row => {
+    const rec = applyDayDelay(Object.assign({}, row));
+    const k = rowKey(rec);
+    if (!map.has(k)) { map.set(k, rec); return; }
+    map.set(k, mergeFlightFields(map.get(k), rec));
+  };
+  (fvRows || []).forEach(add);
+  (hkiaRows || []).forEach(add);
+  return dropUnsupportedDayDelays(foldDayDelays(Array.from(map.values()).map(applyActualRules)), hkiaRows);
+}
+
+function fr24Path() {
+  return "https://api.flightradar24.com/common/v1/airport.json";
+}
+function hkYmdOf(d) {
+  const fmt = new Intl.DateTimeFormat("en-GB", { timeZone: "Asia/Hong_Kong", year: "numeric", month: "2-digit", day: "2-digit" });
+  const p = {};
+  for (const x of fmt.formatToParts(d)) p[x.type] = x.value;
+  return p.year + "-" + p.month + "-" + p.day;
+}
+let fr24RegMap = {};
+let fr24ActualMap = {};
+ROWS.forEach(r => { if (r.reg) fr24RegMap[r.date + "|" + r.dir + "|" + r.flight] = r.reg; });
+let fr24At = 0;
+let fr24MapDay = "";
+function hmFromUnix(ts) {
+  if (!ts) return "";
+  const d = new Date((ts > 1e12 ? ts : ts * 1000));
+  const p = {};
+  for (const x of new Intl.DateTimeFormat("en-GB", { timeZone: "Asia/Hong_Kong", hour: "2-digit", minute: "2-digit", hour12: false }).formatToParts(d)) p[x.type] = x.value;
+  return (p.hour && p.minute) ? (p.hour + ":" + p.minute) : "";
+}
+function ingestActuals(map, dir, flight, ymd, atd) {
+  if (!map || !atd || !dir || !flight) return;
+  const fls = [flight, flightKey(flight)].filter((f, i, a) => f && a.indexOf(f) === i);
+  dutyDateKeys(ymd).forEach(d => {
+    fls.forEach(f => { if (f) map[d + "|" + dir + "|" + f] = atd; });
+  });
+}
+function allActualMaps() {
+  const map = Object.assign({}, fr24ActualMap);
+  (extraLdRegs || []).forEach(it => {
+    if (it && it.atd) ingestActuals(map, it.dir, it.flight, it.ymd, it.atd);
+  });
+  return map;
+}
+function fillMissingActuals(rows, actuals) {
+  const map = Object.assign({}, actuals || {});
+  const stands = {};
+  (rows || []).forEach(r => {
+    if (hasVal(r.atd)) ingestActuals(map, r.dir, r.flight, r, r.atd);
+    if (hasVal(r.st)) ingestActuals(stands, r.dir, r.flight, r, r.st);
+  });
+  return (rows || []).map(r => {
+    let rec = Object.assign({}, r);
+    const fromStatus = timeFromActualStatus(r.status);
+    if (!hasVal(rec.atd) && fromStatus) rec.atd = fromStatus;
+    const fls = [r.flight, flightKey(r.flight)].filter((f, i, a) => f && a.indexOf(f) === i);
+    dutyDateKeys(r).forEach(d => {
+      fls.forEach(f => {
+        if (!f) return;
+        const k = d + "|" + r.dir + "|" + f;
+        if (!hasVal(rec.atd) && map[k]) rec.atd = map[k];
+        if (!hasVal(rec.st) && stands[k]) rec.st = stands[k];
+      });
+    });
+    const parsed = parseHkiaStatus(rec.status);
+    if (isActualStatus(parsed.label)) rec.status = parsed.label;
+    return stripStaleActuals(rec);
+  });
+}
+let fvCache = { at: 0, rows: [], complete: false };
+let fvInflight = null;
+let liveBusy = false;
+let liveGen = 0;
+let hkRowsLive = null;
+async function fetchFr24Page(mode, page) {
+  const url = fr24Path() + "?code=HKG&plugin-setting[schedule][mode]=" + encodeURIComponent(mode) + "&page=" + page + "&limit=100";
+  return fetchJson(url, { headers: { Accept: "application/json" } }, 8000);
+}
+async function fetchFr24Mode(mode) {
+  const data = await fetchFr24Page(mode, 1);
+  const block = data.result.response.airport.pluginData.schedule[mode];
+  let items = (block.data || []).slice();
+  const total = Math.min((block.page && block.page.total) || 1, 12);
+  if (total < 2) return items;
+  const pages = [];
+  for (let p = 2; p <= total; p++) pages.push(p);
+  const rest = await poolMap(pages, 6, p => fetchFr24Page(mode, p));
+  rest.forEach(data2 => {
+    if (!data2 || data2 instanceof Error) return;
+    const b = data2.result.response.airport.pluginData.schedule[mode];
+    items = items.concat(b.data || []);
+  });
+  return items;
+}
+function regsFromFr24Items(items, direc, today, tomorrow, map, actuals) {
+  for (const item of items) {
+    const fl = item.flight || {};
+    const ident = (fl.identification || {}).number || {};
+    const num = flightKey(ident.default || ident.codeshare || "");
+    if (!airlineOf(num)) continue;
+    const reg = String(((fl.aircraft || {}).registration) || "").trim().toUpperCase();
+    const times = fl.time || {};
+    const sched = times.scheduled || {};
+    const real = times.real || {};
+    const realTs = direc === "arr" ? real.arrival : real.departure;
+    const schedTs = direc === "arr" ? sched.arrival : sched.departure;
+    const ts = schedTs || realTs;
+    if (ts) {
+      // Use scheduled time for the date key so a after-midnight actual
+      // does not attach last night's REG to tonight's same flight number.
+      const ymd = hkYmdOf(new Date(ts * 1000));
+      const df = dateFilterFromYmd(ymd);
+      if (reg && df) map[df + "|" + direc + "|" + num] = reg;
+    }
+    if (realTs && actuals) {
+      const ymd = hkYmdOf(new Date(realTs * 1000));
+      ingestActuals(actuals, direc, num, ymd, hmFromUnix(realTs));
+    }
+  }
+  return map;
+}
+async function loadFr24Regs() {
+  const now = Date.now();
+  const today = hkYmd(0), tomorrow = hkYmd(1);
+  if (fr24MapDay && fr24MapDay !== today) {
+    fr24RegMap = {};
+    fr24ActualMap = {};
+    fr24At = 0;
+  }
+  if (now - fr24At < 90 * 1000 && Object.keys(fr24RegMap).length) return fr24RegMap;
+  const settled = await Promise.allSettled([fetchFr24Mode("arrivals"), fetchFr24Mode("departures")]);
+  const map = (fr24MapDay === today) ? Object.assign({}, fr24RegMap) : {};
+  const actuals = (fr24MapDay === today) ? Object.assign({}, fr24ActualMap) : {};
+  if (settled[0].status === "fulfilled") regsFromFr24Items(settled[0].value, "arr", today, tomorrow, map, actuals);
+  if (settled[1].status === "fulfilled") regsFromFr24Items(settled[1].value, "dep", today, tomorrow, map, actuals);
+  if (Object.keys(map).length || Object.keys(actuals).length) {
+    fr24RegMap = map;
+    fr24ActualMap = actuals;
+    fr24At = Date.now();
+    fr24MapDay = today;
+  }
+  return fr24RegMap;
+}
+function applyRegs(rows, regMap, overwrite) {
+  const idx = {};
+  Object.keys(regMap || {}).forEach(k => {
+    const parts = String(k).split("|");
+    if (parts.length < 3 || !regMap[k]) return;
+    idx[k] = regMap[k];
+    idx[parts[0] + "|" + parts[1] + "|" + flightKey(parts[2])] = regMap[k];
+  });
+  return rows.map(r => {
+    const rec = Object.assign({}, r);
+    const df = dateFilterFromYmd(r.ymd || dutyYmd(r));
+    if (df !== "today" && df !== "tomorrow") return rec;
+    const k1 = df + "|" + r.dir + "|" + r.flight;
+    const k2 = df + "|" + r.dir + "|" + flightKey(r.flight);
+    const hit = idx[k1] || idx[k2] || "";
+    if (hit && (overwrite || !hasVal(rec.reg))) rec.reg = hit;
+    if (!hasVal(rec.reg) && r.dayDelay && r.schedYmd) {
+      const base = flightKeyBase(r.flight);
+      const sdf = dateFilterFromYmd(r.schedYmd);
+      if (sdf) rec.reg = idx[sdf + "|" + r.dir + "|" + base] || "";
+    }
+    return rec;
+  });
+}
+const REG_STORE = "hkg_fb_ld_regs_v4";
+let extraLdRegs = [];
+let extraLdAt = 0;
+let extraLdInflight = null;
+function loadStoredRegs() {
+  try {
+    const raw = JSON.parse(localStorage.getItem(REG_STORE) || "{}");
+    const today = hkYmd(0), tomorrow = hkYmd(1), yest = hkYmd(-1);
+    const keep = {};
+    Object.keys(raw).forEach(k => {
+      const ymd = String(k).split("|")[0];
+      if ((ymd === today || ymd === tomorrow || ymd === yest) && raw[k]) keep[k] = String(raw[k]).toUpperCase();
+    });
+    return keep;
+  } catch (e) { return {}; }
+}
+function saveStoredRegs(rows) {
+  try {
+    const keep = loadStoredRegs();
+    (rows || []).forEach(r => {
+      const ymd = r.ymd || dutyYmd(r);
+      if (!r.reg || !ymd) return;
+      keep[ymd + "|" + r.dir + "|" + flightKey(r.flight)] = String(r.reg).toUpperCase();
+    });
+    localStorage.setItem(REG_STORE, JSON.stringify(keep));
+  } catch (e) {}
+}
+function storedRegMap() {
+  const today = hkYmd(0), tomorrow = hkYmd(1), out = {};
+  const stored = loadStoredRegs();
+  Object.keys(stored).forEach(k => {
+    const parts = String(k).split("|");
+    if (parts.length < 3) return;
+    const df = parts[0] === tomorrow ? "tomorrow" : (parts[0] === today ? "today" : "");
+    if (df) out[df + "|" + parts[1] + "|" + flightKey(parts[2])] = stored[k];
+  });
+  return out;
+}
+function extraRegMap(items) {
+  const today = hkYmd(0), tomorrow = hkYmd(1), out = {};
+  (items || []).forEach(it => {
+    if (!it || !it.reg || !it.flight || !it.dir) return;
+    const df = it.ymd === tomorrow ? "tomorrow" : (it.ymd === today ? "today" : "");
+    if (df) out[df + "|" + it.dir + "|" + flightKey(it.flight)] = String(it.reg).toUpperCase();
+  });
+  return out;
+}
+const STAND_STORE = "hkg_fb_stands_v2";
+function loadStands() {
+  try {
+    const raw = JSON.parse(localStorage.getItem(STAND_STORE) || "{}");
+    const today = hkYmd(0), tomorrow = hkYmd(1), yest = hkYmd(-1);
+    const keep = {};
+    Object.keys(raw).forEach(k => {
+      const ymd = String(k).split("|")[0];
+      if ((ymd === today || ymd === tomorrow || ymd === yest) && raw[k] && raw[k].reg) keep[k] = raw[k];
+    });
+    return keep;
+  } catch (e) { return {}; }
+}
+function saveStands(rows) {
+  try {
+    const keep = loadStands();
+    (rows || []).forEach(r => {
+      if (!r || r.dir !== "arr" || !r.reg) return;
+      const st = String(r.st || "").trim().toUpperCase();
+      const ymd = r.ymd || dutyYmd(r);
+      if (!st || !ymd) return;
+      const t = dayStamp(ymd, r.atd) || dayStamp(ymd, r.etd) || dayStamp(ymd, r.std);
+      const key = ymd + "|" + st;
+      const ts = t ? t.getTime() : 0;
+      const prev = keep[key];
+      if (!prev || ts >= (prev.ts || 0)) keep[key] = { reg: String(r.reg).toUpperCase(), ts: ts, flight: r.flight || "" };
+    });
+    localStorage.setItem(STAND_STORE, JSON.stringify(keep));
+  } catch (e) {}
+}
+function preserveRegs(prevRows, nextRows) {
+  // Do not restore cached/inferred tails. Confirmed REGs are re-applied
+  // in finalizeRegs; uncertain ones stay blank for Done hand-entry.
+  return nextRows || [];
+}
+function fillLdByStand(rows) {
+  // Disabled 2026-11-18: guessing departure REG from the latest same-stand
+  // arrival is not reliable (stand 30 vs N30, and can show the wrong tail).
+  // Leave blank when uncertain; staff enter the last two letters at Done.
+  return rows || [];
+}
+// James confirmed; date-scoped so it does not stick to later flights.
+const MANUAL_REGS = {
+  "2026-11-13|dep|LD327": "B-LKA",
+  "2026-11-13|dep|LD128": "B-LDU",
+  "2026-11-13|dep|LD457": "B-LDW",
+  "2026-11-15|dep|CX153": "B-LRO",
+  "2026-11-15|dep|LH797": "D-ABQA",
+  "2026-11-16|dep|LD680": "B-LKA",
+  // James 2026-11-16 22:48 HKT: FR24 arrival REGs.
+  "2026-11-17|arr|LD681": "B-LKA",
+  "2026-11-17|arr|LD129": "B-LDV",
+  "2026-11-17|arr|LD205": "B-LDT",
+  "2026-11-17|arr|LD769": "B-LDS",
+  "2026-11-17|arr|LD721": "B-LDZ",
+  "2026-11-17|arr|LD217": "B-LDQ",
+  "2026-11-17|arr|LD326": "B-LDX",
+  "2026-11-17|arr|LD783": "B-LKC",
+  "2026-11-17|arr|LD209": "B-LDR",
+  "2026-11-17|arr|LD562": "B-LDW",
+  "2026-11-17|arr|LD842": "B-LKB"
+};
+function manualRegMap() {
+  const today = hkYmd(0), tomorrow = hkYmd(1), out = {};
+  Object.keys(MANUAL_REGS).forEach(k => {
+    const parts = String(k).split("|");
+    if (parts.length < 3 || !MANUAL_REGS[k]) return;
+    const df = parts[0] === tomorrow ? "tomorrow" : (parts[0] === today ? "today" : "");
+    if (df) out[df + "|" + parts[1] + "|" + flightKey(parts[2])] = String(MANUAL_REGS[k]).toUpperCase();
+  });
+  return out;
+}
+let adsbRegs = [];
+let adsbAt = 0;
+let adsbInflight = null;
+function applyAdsbRegs(rows, items) {
+  const today = hkYmd(0), tomorrow = hkYmd(1);
+  const byKey = {};
+  const byFlight = {};
+  (items || []).forEach(it => {
+    if (!it || !it.reg || !it.flight) return;
+    const fl = flightKey(it.flight);
+    const base = flightKeyBase(it.flight);
+    const reg = String(it.reg).toUpperCase();
+    if (it.dir && it.ymd) {
+      const df = it.ymd === tomorrow ? "tomorrow" : (it.ymd === today ? "today" : "");
+      if (df) {
+        byKey[df + "|" + it.dir + "|" + fl] = reg;
+        byKey[df + "|" + it.dir + "|" + base] = reg;
+      }
+    }
+    [fl, base].forEach(k => {
+      if (!k) return;
+      (byFlight[k] || (byFlight[k] = new Set())).add(reg);
+    });
+  });
+  const missingByFl = {};
+  (rows || []).forEach((r, i) => {
+    if (hasVal(r.reg)) return;
+    const fl = flightKeyBase(r.flight) || flightKey(r.flight);
+    if (!fl) return;
+    (missingByFl[fl] || (missingByFl[fl] = [])).push(i);
+  });
+  return (rows || []).map(r => {
+    if (hasVal(r.reg)) return r;
+    const rec = Object.assign({}, r);
+    const fl = flightKey(r.flight);
+    const base = flightKeyBase(r.flight);
+    const df = dateFilterFromYmd(r.ymd || dutyYmd(r));
+    const hit = (df === "today" || df === "tomorrow")
+      ? (byKey[df + "|" + r.dir + "|" + fl] || byKey[df + "|" + r.dir + "|" + base])
+      : "";
+    if (hit) { rec.reg = hit; return rec; }
+    if (r.dayDelay && r.schedYmd) {
+      const sdf = dateFilterFromYmd(r.schedYmd);
+      const delayed = sdf ? byKey[sdf + "|" + r.dir + "|" + base] : "";
+      if (delayed) { rec.reg = delayed; return rec; }
+    }
+    return rec;
+  });
+}
+async function loadAdsbRegs() {
+  if (adsbInflight) return adsbInflight;
+  const now = Date.now();
+  if (now - adsbAt < 90 * 1000 && adsbRegs.length) return adsbRegs;
+  adsbInflight = (async () => {
+    try {
+      const data = await fetchJson("/api/adsb-regs", { headers: { Accept: "application/json" } }, 12000);
+      if (data && Array.isArray(data.regs)) {
+        adsbRegs = data.regs;
+        adsbAt = Date.now();
+      }
+      return adsbRegs;
+    } finally { adsbInflight = null; }
+  })();
+  return adsbInflight;
+}
+function finalizeRegs(rows, regs) {
+  let next = fillMissingActuals(rows, allActualMaps());
+  // Clear inferred tails first (same-stand arrival guess, stale cache).
+  // Only direct sources may fill: stored confirmed, ADSB, FR24, extra LD, manual.
+  // If none has this flight's REG, leave blank so staff enter it at Done.
+  next = next.map(r => {
+    const rec = Object.assign({}, r);
+    rec.reg = "";
+    return rec;
+  });
+  next = applyRegs(next, storedRegMap(), false);
+  next = applyAdsbRegs(next, adsbRegs);
+  next = applyRegs(next, regs || fr24RegMap, true);
+  next = applyRegs(next, extraRegMap(extraLdRegs), true);
+  next = applyRegs(next, manualRegMap(), true);
+  saveStoredRegs(next);
+  return next;
+}
+let extraTriedAt = {};
+function missingRegUrgency(r) {
+  const st = (r.status || "").toLowerCase();
+  if (r.atd || st === "dep" || st === "at gate" || st === "landed" || st === "gate closed") return 0;
+  const t = dayStamp(r.ymd || dutyYmd(r), r.etd || r.std);
+  if (t) {
+    const diff = Math.abs(t.getTime() - Date.now());
+    if (diff < 3 * 3600 * 1000) return 1;
+    return 2;
+  }
+  return 3;
+}
+function pendingMissingFlights(limit) {
+  const now = Date.now();
+  const fresh = fl => !extraTriedAt[fl] || (now - extraTriedAt[fl] > 10 * 60 * 1000);
+  const missing = [].concat(ROWS || [], (fvCache && fvCache.rows) || []).filter(r => {
+    if (!hasVal(r.reg) || (isActualStatus(r.status) && !hasVal(r.atd))) return true;
+    const t = dayStamp(r.ymd || dutyYmd(r), r.etd || r.std);
+    if (!t) return false;
+    const diff = t.getTime() - now;
+    return diff > -60 * 60 * 1000 && diff < 6 * 3600 * 1000;
+  });
+  missing.sort((a, b) => {
+    const da = a.date === "today" ? 0 : 1;
+    const db = b.date === "today" ? 0 : 1;
+    if (da !== db) return da - db;
+    const ua = (isActualStatus(a.status) && !hasVal(a.atd) ? -1 : missingRegUrgency(a));
+    const ub = (isActualStatus(b.status) && !hasVal(b.atd) ? -1 : missingRegUrgency(b));
+    return ua - ub;
+  });
+  const out = [];
+  const seen = new Set();
+  missing.forEach(r => {
+    const fl = flightKeyBase(r.flight) || flightKey(r.flight);
+    if (!fl || seen.has(fl) || !fresh(fl)) return;
+    seen.add(fl);
+    out.push(fl);
+  });
+  return out.slice(0, limit || 30);
+}
+function mergeExtraRegs(items) {
+  const map = {};
+  (extraLdRegs || []).forEach(it => {
+    if (!it || !it.flight || !it.reg) return;
+    map[(it.ymd || "") + "|" + it.dir + "|" + flightKey(it.flight)] = it;
+  });
+  (items || []).forEach(it => {
+    if (!it || !it.flight || !it.reg) return;
+    map[(it.ymd || "") + "|" + it.dir + "|" + flightKey(it.flight)] = it;
+  });
+  extraLdRegs = Object.values(map);
+  return extraLdRegs;
+}
+function recsFromFr24FlightList(data, flight, today, tomorrow) {
+  const rows = ((((data || {}).result || {}).response || {}).data) || [];
+  const out = [];
+  for (const item of rows) {
+    const reg = String(((item.aircraft || {}).registration) || "").trim().toUpperCase();
+    const ap = item.airport || {};
+    const orig = (((ap.origin || {}).code) || {}).iata || "";
+    const dest = (((ap.destination || {}).code) || {}).iata || "";
+    const times = item.time || {};
+    const sched = times.scheduled || {};
+    const real = times.real || {};
+    let dir = "", ts = 0, atd = "";
+    if (dest === "HKG") {
+      dir = "arr";
+      ts = sched.arrival || real.arrival;
+      atd = hmFromUnix(real.arrival);
+    } else if (orig === "HKG") {
+      dir = "dep";
+      ts = sched.departure || real.departure;
+      atd = hmFromUnix(real.departure);
+    } else continue;
+    const ymd = ts ? hkYmdOf(new Date((ts > 1e12 ? ts : ts * 1000))) : "";
+    if (ymd !== today && ymd !== tomorrow) continue;
+    if (!reg && !atd) continue;
+    out.push({ flight: flight, dir: dir, ymd: ymd, reg: reg, atd: atd });
+  }
+  return out;
+}
+async function loadFr24FlightLists(qList) {
+  const today = hkYmd(0), tomorrow = hkYmd(1);
+  const recs = [];
+  const list = (qList || []).map(fl => flightKeyBase(fl) || flightKey(fl)).filter(Boolean);
+  const unique = [...new Set(list)];
+  const parts = await poolMap(unique, 4, async fl => {
+    try {
+      const data = await fetchJson(
+        "https://api.flightradar24.com/common/v1/flight/list.json?query=" + encodeURIComponent(fl) + "&fetchBy=flight&limit=20",
+        { headers: { Accept: "application/json" } },
+        12000
+      );
+      return recsFromFr24FlightList(data, fl, today, tomorrow);
+    } catch (e) { return []; }
+  });
+  parts.forEach(arr => { if (Array.isArray(arr)) recs.push(...arr); });
+  return recs;
+}
+async function loadExtraLdRegs() {
+  if (extraLdInflight) return extraLdInflight;
+  extraLdInflight = (async () => {
+    try {
+      const qList = pendingMissingFlights(30);
+      if (!qList.length) return extraLdRegs;
+      const data = await fetchJson("/api/fr24-regs?q=" + encodeURIComponent(qList.join(",")), { headers: { Accept: "application/json" } }, 25000).catch(() => null);
+      if (data && Array.isArray(data.regs)) mergeExtraRegs(data.regs);
+      const still = qList.filter(fl => {
+        const k = flightKeyBase(fl) || flightKey(fl);
+        return !extraLdRegs.some(it => it && it.reg && (flightKey(it.flight) === k || flightKeyBase(it.flight) === k));
+      });
+      if (still.length) {
+        const recs = await loadFr24FlightLists(still);
+        if (recs.length) mergeExtraRegs(recs);
+      }
+      const now = Date.now();
+      qList.forEach(fl => { extraTriedAt[fl] = now; });
+      extraLdAt = now;
+      return extraLdRegs;
+    } finally { extraLdInflight = null; }
+  })();
+  return extraLdInflight;
+}
+
+function rowKey(r) { return dutyYmd(r) + "|" + (r.dir || "") + "|" + flightKey(r.flight); }
+function sameDuty(a, b) {
+  const ay = a && (a.ymd || dutyYmd(a));
+  const by = b && (b.ymd || dutyYmd(b));
+  return !!(ay && by && ay === by);
+}
+function keepActuals(prevRows, nextRows, dropOrphans) {
+  const prev = new Map((prevRows || []).map(r => [rowKey(r), r]));
+  const out = (nextRows || []).map(r => {
+    const rec = Object.assign({}, r);
+    const p = prev.get(rowKey(r));
+    if (!p || !sameDuty(p, rec)) return rec;
+    rec.std = fillVal(rec.std, p.std);
+    adoptDelayedTime(rec, p.std, schedYmdOf(rec) || schedYmdOf(p));
+    if (!isActualStatus(rec.status) && (isActualStatus(p.status) || hasVal(p.atd))) {
+      return applyActualRules(rec);
+    }
+    rec.etd = fillVal(rec.etd, p.etd);
+    rec.br = fillVal(rec.br, p.br);
+    const trial = stripStaleActuals(Object.assign({}, rec, { atd: fillVal(rec.atd, p.atd), st: fillVal(rec.st, p.st), reg: fillVal(rec.reg, p.reg) }));
+    rec.atd = trial.atd;
+    if (hasVal(p.atd) && !hasVal(trial.atd)) {
+      rec.st = r.st || "";
+      rec.reg = r.reg || "";
+    } else {
+      rec.st = trial.st;
+      rec.reg = trial.reg;
+    }
+    if (isActualStatus(p.status) && !isActualStatus(rec.status) && rec.atd) rec.status = p.status;
+    return applyActualRules(rec);
+  });
+  // After a complete FV+HKIA refresh, do not re-append cache-only leftovers
+  // (e.g. stale day-delay D rows). HKIA today already returns previous-date
+  // delayed blocks, so genuine next-day delays come from the fresh merge.
+  if (dropOrphans) return out;
+  const seen = new Set(out.map(r => rowKey(r)));
+  (prevRows || []).forEach(p => {
+    const fixed = applyDayDelay(Object.assign({}, p));
+    if ((p.dayDelay || /D$/i.test(flightKey(p.flight))) && !fixed.dayDelay) return;
+    if (seen.has(rowKey(p)) || seen.has(rowKey(fixed))) return;
+    if (out.some(r => isMovedDayDelayOf(p, r) || isMovedDayDelayOf(fixed, r))) return;
+    const ymd = p.ymd || dutyYmd(p);
+    if (!ymd || ymd < hkYmd(0) || ymd > hkYmd(1)) return;
+    if (hiddenByTime(p)) return;
+    out.push(Object.assign({}, p));
+    seen.add(rowKey(p));
+  });
+  return out;
+}
+function rowsFromHkiaBlocks(blocks, arrival, cargo) {
+  const out = [];
+  (blocks || []).forEach(block => {
+    const df = dateFilterFromYmd(block.date);
+    (block.list || []).forEach(item => {
+      const rec = normalizeHkia(item, df, arrival, cargo, block.date);
+      if (rec) out.push(rec);
+    });
+  });
+  return out;
+}
+async function fetchHkiaDays(days) {
+  const hkTasks = [];
+  for (const d of days) for (const arrival of [true, false]) for (const cargo of [false, true]) {
+    hkTasks.push(fetchHkia(d, arrival, cargo).then(blocks => rowsFromHkiaBlocks(blocks, arrival, cargo)));
+  }
+  const settled = await Promise.allSettled(hkTasks);
+  const ok = settled.filter(s => s.status === "fulfilled").flatMap(s => s.value);
+  return { ok, failed: settled.every(s => s.status !== "fulfilled") };
+}
+function rowsFromHkiaBatch(data) {
+  const out = [];
+  (data && data.items || []).forEach(item => {
+    out.push.apply(out, rowsFromHkiaBlocks(item.blocks, item.arrival, item.cargo));
+  });
+  return out;
+}
+async function loadHkiaRows(onPart) {
+  const days = [hkYmd(0), hkYmd(1)];
+  try {
+    const data = await fetchJson("/api/hkia-batch?dates=" + days.join(","), { headers: { "Accept": "application/json" } }, 15000);
+    const all = rowsFromHkiaBatch(data);
+    if (onPart && all.length) onPart(all);
+    if (data && Array.isArray(data.items)) return all;
+  } catch (e) {}
+  const first = await fetchHkiaDays([days[0]]);
+  if (onPart && first.ok.length) onPart(first.ok);
+  const later = await fetchHkiaDays([days[1]]);
+  const all = first.ok.concat(later.ok);
+  if (onPart && later.ok.length) onPart(all);
+  if (first.failed && later.failed) throw new Error("hkia failed");
+  return all;
+}
+function mergeFvInto(acc, recs) {
+  const map = new Map((acc || []).map(r => {
+    const rec = applyDayDelay(Object.assign({}, r));
+    return [rowKey(rec), rec];
+  }));
+  (recs || []).forEach(raw => {
+    const r = applyDayDelay(Object.assign({}, raw));
+    const prev = map.get(rowKey(r));
+    if (!prev) { map.set(rowKey(r), applyActualRules(r)); return; }
+    if (!sameDuty(prev, r)) {
+      map.set(rowKey(r), applyActualRules(r));
+      return;
+    }
+    const d = Object.assign({}, prev, r);
+    if (!r.st && prev.st) d.st = prev.st;
+    if (!r.atd && prev.atd) d.atd = prev.atd;
+    if (!r.etd && prev.etd) d.etd = prev.etd;
+    if (hasVal(prev.std)) adoptDelayedTime(d, prev.std, schedYmdOf(d) || schedYmdOf(prev));
+    if (!r.reg && prev.reg) d.reg = prev.reg;
+    if (!r.br && prev.br) d.br = prev.br;
+    if (isActualStatus(prev.status) && !isActualStatus(r.status)) d.status = prev.status;
+    applyActualRules(d);
+    map.set(rowKey(r), d);
+  });
+  return Array.from(map.values());
+}
+async function loadFvSlice(dateFilter, arrDep, onPart, airlines) {
+  const list = airlines || AIRLINES;
+  const take = (rows, stale) => {
+    const recs = (rows || []).map(r => normalizeFv(r, dateFilter, arrDep, stale)).filter(Boolean);
+    if (onPart && recs.length) onPart(recs);
+    return recs;
+  };
+  const parts = await poolMap(list, 2, al =>
+    fetchFvOne(al, arrDep, dateFilter, take)
+      .then(() => [])
+      .catch(() => [])
+  );
+  return parts.flatMap(x => Array.isArray(x) ? x : []);
+}
+async function loadFvAll(onChunk) {
+  if (fvInflight) {
+    const rows = await fvInflight;
+    if (onChunk && rows && rows.length) onChunk(rows);
+    return rows;
+  }
+  fvInflight = (async () => {
+    fvCache.rows = pruneDutyCache(fvCache.rows);
+    if (!fvCache.rows.length) fvCache = { at: 0, rows: [], complete: false };
+    const now = Date.now();
+    if (now - fvCache.at < 45 * 1000 && fvCache.complete && fvCache.rows.length) {
+      if (onChunk) onChunk(fvCache.rows);
+      return fvCache.rows;
+    }
+    // Progressive paint may still show the previous cache, but the new
+    // network merge starts empty so leftovers cannot survive a complete load.
+    if (fvCache.rows.length && onChunk) onChunk(fvCache.rows);
+    let acc = [];
+    const add = recs => {
+      acc = mergeFvInto(acc, recs);
+      fvCache = { at: Date.now(), rows: acc, complete: false };
+      if (onChunk) onChunk(acc);
+    };
+    const others = AIRLINES.filter(a => a !== "CX");
+    await Promise.all([
+      loadFvSlice("today", "D", add),
+      loadFvSlice("today", "a", add, ["CX"])
+    ]);
+    await Promise.all([
+      loadFvSlice("today", "a", add, others),
+      loadFvSlice("tomorrow", "a", add),
+      loadFvSlice("tomorrow", "D", add)
+    ]);
+    // FV rejects yesterday date_filter (500). Genuine next-day delays still
+    // arrive via HKIA previous-date blocks on the today query.
+    fvCache = { at: Date.now(), rows: acc, complete: true };
+    if (onChunk) onChunk(acc);
+    return acc;
+  })();
+  try { return await fvInflight; }
+  finally { fvInflight = null; }
+}
+const ROW_STORE = "hkg_fb_rows_v5";
+function restoreRowCache() {
+  try {
+    const o = JSON.parse(localStorage.getItem(ROW_STORE) || "null");
+    if (!o || !Array.isArray(o.rows) || !o.rows.length || o.today !== hkYmd(0)) return;
+    const rows = pruneDutyCache(o.rows);
+    if (!rows.length) return;
+    ROWS = rows;
+    if (o.lastOk) lastOk = o.lastOk;
+    fvCache = { at: 0, rows: rows.slice(), complete: false };
+  } catch (e) {}
+}
+function saveRowCache(rows) {
+  try {
+    localStorage.setItem(ROW_STORE, JSON.stringify({
+      today: hkYmd(0), lastOk: lastOk, rows: pruneDutyCache(rows || ROWS)
+    }));
+  } catch (e) {}
+}
+
+const PLAN_OVERRIDES = {
+  "2026-11-15|dep|LD768": { std: "03:25", st: "X29", reg: "B-LDS" },
+  "2026-11-15|dep|LD831": { std: "03:40", st: "X7", reg: "B-LKB" },
+  "2026-11-15|dep|LD327": { std: "03:45", st: "X31", reg: "B-LDX" },
+  "2026-11-15|dep|LD720": { std: "04:00", st: "X2", reg: "B-LDZ" },
+  "2026-11-15|dep|LD457": { std: "04:05", st: "X4", reg: "B-LKA" },
+  "2026-11-15|dep|LD204": { std: "04:20", st: "X28", reg: "B-LDT" },
+  "2026-11-15|dep|LD208": { std: "04:25", st: "X26", reg: "B-LDR" },
+  "2026-11-15|dep|LD782": { std: "04:25", st: "X25", reg: "B-LKC" },
+  "2026-11-15|dep|LD216": { std: "04:35", st: "X30", reg: "B-LDQ" },
+  "2026-11-15|dep|LD128": { std: "04:50", st: "X5", reg: "B-LDU" },
+  "2026-11-15|dep|LD561": { std: "05:05", st: "X1", reg: "B-LDW" },
+  "2026-11-15|dep|LD8061": { std: "07:00", st: "L411", reg: "B-LDV" },
+  // James 2026-11-16: FR24 ATD 14:43 HKT (06:43 UTC); hide after ATD+60.
+  "2026-11-16|dep|CX3842": { atd: "14:43" },
+  // James 2026-11-16 23:08 HKT: from his LD plan sheets (stand + REG; arrival ETA as etd).
+  "2026-11-17|dep|LD327": { std: "03:20", st: "X7", reg: "B-LDT" },
+  "2026-11-17|dep|LD128": { std: "03:25", st: "X4", reg: "B-LDS" },
+  "2026-11-17|dep|LD768": { std: "03:25", st: "X6", reg: "B-LDP" },
+  "2026-11-17|dep|LD204": { std: "03:30", st: "X28", reg: "B-LDQ" },
+  "2026-11-17|dep|LD831": { std: "03:40", st: "X2", reg: "B-LKC" },
+  "2026-11-17|dep|LD208": { std: "03:45", st: "X26", reg: "B-LDZ" },
+  "2026-11-17|dep|LD561": { std: "03:45", st: "X25", reg: "B-LDR" },
+  "2026-11-17|dep|LD216": { std: "03:50", st: "X29", reg: "B-LDX" },
+  "2026-11-17|dep|LD782": { std: "03:50", st: "X24", reg: "B-LKB" },
+  "2026-11-17|dep|LD720": { std: "04:00", st: "X31", reg: "B-LDV" },
+  "2026-11-17|dep|LD680": { std: "04:20", st: "X30", reg: "B-LDW" },
+  "2026-11-17|dep|LD457": { std: "03:40", st: "X1", reg: "B-LKA" },
+  "2026-11-17|arr|LD681": { std: "00:20", st: "X1", reg: "B-LKA" },
+  "2026-11-17|arr|LD721": { std: "01:10", etd: "00:39", st: "X26", reg: "B-LDZ" },
+  "2026-11-17|arr|LD769": { std: "01:05", etd: "00:56", st: "X4", reg: "B-LDS" },
+  "2026-11-17|arr|LD217": { std: "01:15", etd: "00:57", st: "X28", reg: "B-LDQ" },
+  "2026-11-17|arr|LD205": { std: "01:00", etd: "00:59", st: "X7", reg: "B-LDT" },
+  "2026-11-17|arr|LD562": { std: "01:20", st: "X30", reg: "B-LDW" },
+  "2026-11-17|arr|LD783": { std: "01:25", st: "X2", reg: "B-LKC" },
+  "2026-11-17|arr|LD842": { std: "01:25", etd: "01:29", st: "X24", reg: "B-LKB" },
+  "2026-11-17|arr|LD326": { std: "01:25", etd: "01:36", st: "X29", reg: "B-LDX" },
+  "2026-11-17|arr|LD209": { std: "01:30", etd: "01:39", st: "X25", reg: "B-LDR" }
+};
+function planOverrideKey(r) {
+  return dutyYmd(r) + "|" + (r.dir || "") + "|" + flightKey(r.flight);
+}
+function refreshDutyDateLabels(rows) {
+  return (rows || []).map(r => {
+    const ymd = (r && (r.ymd || r.opYmd)) || dutyYmd(r);
+    if (!ymd) return r;
+    const rec = Object.assign({}, r);
+    rec.ymd = rec.ymd || ymd;
+    rec.date = dateFilterFromYmd(ymd);
+    return rec;
+  });
+}
+let PLAN_LIVE = {};
+async function pullLdPlan() {
+  try {
+    const { res, data } = await authFetch("/api/ld-plan");
+    if (!res || !res.ok || !data || !Array.isArray(data.rows)) return;
+    const map = {};
+    for (const rec of data.rows) {
+      if (!rec || !rec.ymd || !rec.dir || !rec.flight) continue;
+      const k = rec.ymd + "|" + rec.dir + "|" + flightKey(rec.flight);
+      const o = {};
+      if (rec.std) o.std = rec.std;
+      if (rec.etd) o.etd = rec.etd;
+      if (rec.st) o.st = rec.st;
+      if (rec.reg) o.reg = rec.reg;
+      map[k] = o;
+    }
+    PLAN_LIVE = map;
+  } catch (e) {}
+}
+function applyPlanOverrides(rows) {
+  return (rows || []).map(r => {
+    const k = planOverrideKey(r);
+    const o = Object.assign({}, PLAN_OVERRIDES[k] || {}, PLAN_LIVE[k] || {});
+    if (!o || !Object.keys(o).length) return r;
+    const rec = Object.assign({}, r);
+    if (o.std) {
+      if (hasVal(rec.std) && hhmm(rec.std) !== hhmm(o.std)) {
+        if (!hasVal(rec.etd) || hhmm(rec.etd) === hhmm(rec.std)) rec.etd = rec.std;
+      }
+      rec.std = o.std;
+    }
+    if (o.etd) rec.etd = o.etd;
+    if (o.atd) rec.atd = o.atd;
+    if (o.status) rec.status = o.status;
+    if (o.st) rec.st = o.st;
+    if (o.reg) rec.reg = o.reg;
+    return rec;
+  });
+}
+let paintTimer = 0;
+let paintArgs = null;
+function paint(fvRows, hkRows, regs) {
+  paintArgs = { fvRows: fvRows, hkRows: hkRows, regs: regs };
+  if (paintTimer) return;
+  paintTimer = setTimeout(() => {
+    paintTimer = 0;
+    const a = paintArgs;
+    paintArgs = null;
+    if (a) paintNow(a.fvRows, a.hkRows, a.regs);
+  }, 80);
+}
+function paintNow(fvRows, hkRows, regs) {
+  const prev = ROWS || [];
+  saveStands([].concat(prev, fvRows || [], hkRows || [], (fvCache && fvCache.rows) || []));
+  const dropOrphans = !!(fvCache && fvCache.complete) && hkRowsLive !== null;
+  const merged = dropUnsupportedDayDelays(dropMovedDayDelaySources(foldDayDelays(keepActuals(prev, mergeRows(fvRows || [], hkRows || []), dropOrphans))), hkRows || []);
+  ROWS = refreshDutyDateLabels(applyPlanOverrides(preserveRegs(prev, finalizeRegs(merged, regs || fr24RegMap))));
+  saveStands(ROWS);
+  lastOk = fmtHk(new Date());
+  liveOk = true;
+  saveRowCache(ROWS);
+  pruneExpiredMyOrder();
+  render();
+}
+
+function releaseLiveUi() {
+  liveBusy = false;
+  const btn = document.getElementById("btn-refresh");
+  if (btn) {
+    btn.disabled = false;
+    btn.textContent = "刷新";
+  }
+}
+async function fillMissingRegsInBackground(gen, fvRows, map) {
+  const rowsNow = fvRows && fvRows.length ? fvRows : ((fvCache && fvCache.rows) || []);
+  for (let i = 0; i < 3; i++) {
+    if (gen !== liveGen) return;
+    if (!pendingMissingFlights(1).length && !(i === 0 && !adsbAt)) break;
+    const tasks = [loadExtraLdRegs().catch(() => {})];
+    if (i === 0) tasks.push(loadAdsbRegs().catch(() => adsbRegs));
+    await Promise.all(tasks);
+    if (gen !== liveGen) return;
+    paint(rowsNow, hkRowsLive || [], map || fr24RegMap);
+  }
+}
+async function ensureFreshApp() {
+  try {
+    const res = await fetch("/index.html?v=" + Date.now(), { cache: "no-store", credentials: "same-origin" });
+    if (!res.ok) return false;
+    const html = await res.text();
+    const m = html.match(/APP_VER\s*=\s*"([^"]+)"/);
+    if (m && m[1] && m[1] !== APP_VER) {
+      location.reload();
+      return true;
+    }
+  } catch (e) {}
+  return false;
+}
+async function loadLive() {
+  if (!isAuthed() || document.visibilityState === "hidden") return;
+  if (liveBusy) return;
+  if (await ensureFreshApp()) return;
+  liveBusy = true;
+  const gen = ++liveGen;
+  const btn = document.getElementById("btn-refresh");
+  if (btn) {
+    btn.disabled = true;
+    btn.textContent = "更新中";
+  }
+  let released = false;
+  let cap = 0;
+  const release = () => {
+    if (released) return;
+    released = true;
+    if (cap) clearTimeout(cap);
+    releaseLiveUi();
+  };
+  cap = setTimeout(() => { if (gen === liveGen) release(); }, 1000);
+  try {
+    await Promise.all([pullServerMyOrder(), pullLdPlan(), pullEvKey()]);
+    if (gen !== liveGen) return;
+    const hkP = loadHkiaRows(rows => {
+      hkRowsLive = rows;
+      if (gen !== liveGen) return;
+      paint(fvCache.rows, hkRowsLive || [], fr24RegMap);
+      release();
+    });
+    const fvP = loadFvAll(rows => {
+      if (gen !== liveGen) return;
+      paint(rows, hkRowsLive || [], fr24RegMap);
+      release();
+    });
+    const frP = loadFr24Regs().catch(() => fr24RegMap);
+    hkP.catch(() => {});
+    const fvRows = await fvP;
+    if (gen !== liveGen) return;
+    try { const hkRows = await hkP; hkRowsLive = hkRows; } catch (e) {}
+    if (!(hkRowsLive && hkRowsLive.length) && !(fvRows && fvRows.length)) throw new Error("both failed");
+    const map = await frP;
+    if (gen !== liveGen) return;
+    if (map) paint(fvCache.rows, hkRowsLive || [], map);
+    fillMissingRegsInBackground(gen, fvRows, map || fr24RegMap);
+    lastFullAt = lastLightAt = Date.now();
+  } catch (err) {
+    if (gen !== liveGen) return;
+    liveOk = false;
+    lastOk = fmtHk(new Date());
+    lastFullAt = Date.now();
+    render();
+  } finally {
+    if (gen === liveGen) release();
+  }
+}
+async function loadHkiaLight() {
+  if (!isAuthed() || document.visibilityState === "hidden") return;
+  if (liveBusy) return;
+  lastLightAt = Date.now();
+  try {
+    await Promise.all([pullServerMyOrder(), pullLdPlan(), pullEvKey()]);
+    const rows = await loadHkiaRows();
+    if (liveBusy) return;
+    if (rows && rows.length) {
+      hkRowsLive = rows;
+      paint((fvCache && fvCache.rows) || [], hkRowsLive, fr24RegMap);
+    } else {
+      render();
+    }
+  } catch (e) {
+    render();
+  }
+}
+function tick() {
+  if (!isAuthed() || document.visibilityState === "hidden") return;
+  if (liveOk !== false) loadLive();
+  else render();
+}
+async function lightTick() {
+  if (!isAuthed()) return;
+  const pulled = await pullServerMyOrder();
+  if (pulled) pruneExpiredMyOrder();
+  render();
+  if (document.visibilityState === "hidden") return;
+  if (liveBusy) return;
+  if (liveOk === false) return;
+  const now = Date.now();
+  if (lastFullAt && now - lastFullAt >= FULL_MS) {
+    loadLive();
+    return;
+  }
+  if (!lastLightAt || now - lastLightAt >= LIGHT_MS) loadHkiaLight();
+}
+let maybeRefreshTimer = 0;
+function maybeRefresh() {
+  if (!isAuthed() || document.visibilityState === "hidden") return;
+  if (maybeRefreshTimer) clearTimeout(maybeRefreshTimer);
+  maybeRefreshTimer = setTimeout(() => {
+    maybeRefreshTimer = 0;
+    if (!isAuthed() || document.visibilityState === "hidden") return;
+    if (liveBusy) return;
+    const now = Date.now();
+    if (!lastFullAt || now - lastFullAt >= FULL_MS) {
+      if (liveOk === false) { scheduleRender(); return; }
+      startTimer();
+      loadLive();
+      return;
+    }
+    if (!lastLightAt || now - lastLightAt >= LIGHT_MS) loadHkiaLight();
+    else scheduleRender();
+  }, 280);
+}
+function stopTimer() {
+  if (timer) clearInterval(timer);
+  timer = null;
+  if (lightTimer) clearInterval(lightTimer);
+  lightTimer = null;
+  if (maybeRefreshTimer) clearTimeout(maybeRefreshTimer);
+  maybeRefreshTimer = 0;
+}
+function startTimer() {
+  stopTimer();
+  if (!isAuthed() || document.visibilityState === "hidden") return;
+  timer = setInterval(tick, FULL_MS);
+  lightTimer = setInterval(lightTick, LIGHT_MS);
+}
+function isAuthed() {
+  return document.body.classList.contains("authed");
+}
+const IDLE_MS = 120 * 60 * 1000;
+let lastUserActivity = Date.now();
+let touchTimer = 0;
+let idleCheckTimer = 0;
+let logoutBusy = false;
+function stopIdleWatch() {
+  if (idleCheckTimer) clearInterval(idleCheckTimer);
+  idleCheckTimer = 0;
+  if (touchTimer) clearTimeout(touchTimer);
+  touchTimer = 0;
+}
+function startIdleWatch() {
+  lastUserActivity = Date.now();
+  stopIdleWatch();
+  idleCheckTimer = setInterval(checkIdle, 30000);
+}
+function markUserActivity() {
+  lastUserActivity = Date.now();
+  if (!isAuthed()) return;
+  if (touchTimer) return;
+  touchTimer = setTimeout(() => {
+    touchTimer = 0;
+    if (!isAuthed()) return;
+    authFetch("/api/auth/touch", { method: "POST" }).catch(() => {});
+  }, 60000);
+}
+function checkIdle() {
+  if (!isAuthed()) return;
+  if (Date.now() - lastUserActivity >= IDLE_MS) {
+    logoutClient("已閒置 120 分鐘，請重新登入");
+  }
+}
+function stopBoard() {
+  stopTimer();
+  stopIdleWatch();
+  liveGen += 1;
+  liveBusy = false;
+}
+async function logoutClient(msg) {
+  if (logoutBusy) return;
+  logoutBusy = true;
+  stopBoard();
+  try { await authFetch("/api/evkey", { method: "DELETE" }); } catch {}
+  try { await authFetch("/api/auth/logout", { method: "POST" }); } catch {}
+  clearEvKeyPicks();
+  resetMyOrder(false);
+  saveMyOrder();
+  showLogin(msg || "");
+  const pw = document.getElementById("login-pw");
+  if (pw) pw.value = "";
+  logoutBusy = false;
+}
+function onAuthExpired() {
+  if (!isAuthed() || logoutBusy) return;
+  logoutClient("登入已過期，請重新登入");
+}
+function onVisibility() {
+  if (document.visibilityState === "hidden") {
+    stopTimer();
+    liveGen += 1;
+    liveBusy = false;
+    return;
+  }
+  if (!isAuthed()) return;
+  startTimer();
+  maybeRefresh();
+}
+
+(function setupPwa() {
+  const manifest = {
+    name: "專用航班板",
+    short_name: "航班板",
+    start_url: ".",
+    scope: ".",
+    display: "standalone",
+    background_color: "#386d75",
+    theme_color: "#386d75",
+    lang: "zh-Hant",
+    icons: [
+      { src: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAEjElEQVR4nO3dXXLTQBCFUUPxDruAhcCq2QjLYAfwkFBRhH9ke6SZnnvOG1AFitSfWnZC8uHz1+9/ThDqY+8DgJ4EQDQBEE0ARBMA0QRANAEQTQBEEwDRBEA0ARBNAEQTANEEQDQBEE0ARBMA0QRANAEQTQBEEwDRBEA0ARBNAEQTANEEQDQBEE0ARBMA0QRANAEQTQCd/f71s/chRBMA0QTQ0b+7vy3QjwCIJgCiCaCT9WOPx6A+BEA0AXTgbj8OAQxEGMcTANEEcDB3+bEIYDACOZYAiCaAA7m7j0cAAxLKcQRwEEM9JgEQTQCDsjGOIYADGOZxCYBoAhiYzbE/AezMEI/tU+8DSPXl2493vxZKHzbAji4N9Xr4L/3etb+DNgRwsEuDfuvP2IcAdtLyzv3710+bYCcCaGzPYRVBewJo6IgBtQ3a+vD56/c/vQ+iunsHstULXq8ZnieAJz16N275NqgQHieAB432GCKCxwjgAaMN/5IQ7iOAO4w8+Esi2E4AG1UZ/iUh3CaAGyoO/pIIrhPAFdWHf0kI5wngjJkGf0kE/xPAyqzDvySENwJ4lTD4SyJ4IYBT3vAvpYcQHUDy4K+lhhD71aCG/73U8xG3AVIv9D2StkHUBjD82ySdp4gNkHRBW5t9G0y/AQz/c2Y/f9NugNkvXA8zboMpN4Dh38eM53WqDTDjBRrVLNtgmg1g+I81y/kuvwFmuRCVVd4GpTeA4R9D5etQcgNUPuGzq7YNym0Awz+2atenzAaodmKpsQ3KbQBoSQBEEwDRBEA0ARBNAEQTANH8nOA7XXtv+6jPVYxwDLMQwEqFT95cs+X4RfImKoDqw93KrfOQFMhUAfQe8C/ffkwxPElbpFQAvQd8BKOcg1m2SJl3gUa58GxT5XqVCQD2IACiCYBoAiCaAIgmgMaqvPvBCwEQTQBEE0AhHq/aEwDRBEA0ARBNADvwrF6HAIgmAKIJgGgCIJoAiCaAIryztA8BEE0AO3HHrkEARBMA0QRANAHspPV3RqvyndaqKfNjUqs4YlC9wG7HBmjoqLu0bdCODdBAr4G0CZ4ngCeNcDcWwuME8KARBn9JBI8RwANGG/4lIdzHi+A7jTz8p9P4xzcaG2CjaoNlE2wjgA2qDf+SEK4TwBWVB39JBJd5DXDBLMN/Os31sbRmA5wx88DYBu8JYGHmwV8SwRsBvEoZ/iUhCKDr4C8H0NcT9REdQI+h2zJwRx9XcgSRAYw6+GtC2F9cAEcOVauBqnjMVXzqfQAzaj1EI7xWmJUAGjri7vnv3xBCGwJ4Uq9HBiG0IYAHjfKs7PHoOQK4wyhDf4mtcD8BbDD64K8JYTsBXFFt8Nc8Ht0mgJXqQ3+JrXCeAF7NOvhrQngvOoCUoT/H49GLyACSB/+c5K0Q97VAsOT/BBNNAEQTANEEQDQBEE0ARBMA0QRANAEQTQBEEwDRBEA0ARBNAEQTANEEQDQBEE0ARBMA0QRANAEQTQBEEwDRBEA0ARBNAEQTANEEQDQBEE0ARBMA0QRANAEQTQBEEwDRBEA0ARDtL7QGdEwYT0mmAAAAAElFTkSuQmCC", sizes: "192x192", type: "image/png", purpose: "any" },
+      { src: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAOaklEQVR4nO3dUZbT1hKGUZPFO8wCBgKjZiIMgxlwH5K+7QbbLcmSTp36937NSpAtWfW5FCcfPn359vsCAET5Z/QBAADnEwAAEEgAAEAgAQAAgQQAAAQSAAAQSAAAQCABAACBBAAABBIAABBIAABAIAEAAIEEAAAEEgAAEEgAAEAgAQAAgQQAAAQSAAAQSAAAQCABAACBBAAABBIAABBIAABAIAEAAIEEAAAEEgAAEEgAAEAgAQAAgQQAAAQSAAAQSAAAQCABAACBBAAABBIAABBIAABAIAEAAIEEAAAEEgAAEEgAAEAgAQAAgQQAAAQSAAAQSAAAQCABAACBBAAABBIAABBIAABAIAEAAIEEAAAEEgAAEEgAAEAgAQAAgQQAAAQSAAAQSAAAQCABAACBBAAABBIAABBIAABAIAEAAIEEAAAEEgAAEEgAAEAgAQAAgQQAAAQSAAAQSAAAQCABAACBBAAABBIAABBIAABAIAEAAIEEAAAEEgAAEEgAAEAgAQAAgQQAAAQSAAAQSAAAQCABAACBBAAABBIAABBIAABAIAEAAIEEAAAEEgAQ7NfPH6MPARhEAABAIAEAoV6+/dsCQCYBAACBBAAABBIAEOjPtb/HAJBHAABAIAEAAIEEAIS5t+73GACyCAAACCQAACCQAIAg7635PQaAHAIAAAIJAAAIJAAgxNL1vscAkEEAAEAgAQAAgQQABFi71vcYAPoTAAAQSABAc1u/zdsCQG8CAAACCQAACCQAoLFn1/geA0BfAgAAAgkAAAgkAKCpvdb3HgNATwIAAAIJAAAIJACgob3X9h4DQD8CAAACCQAACCQAoJmj1vUeA0AvAgAAAgkAAAgkAKCRo9f0HgNAHwIAAAIJAAAIJACgibPW8x4DQA8CAAACCQAACCQAoIGz1/IeA8D8BAAABBIAABBIAMDkRq3jPQaAuQkAAAgkAAAgkACAiY1ew4/+84HtBAAABBIAABBIAMCkqqzfqxwHsI4AAIBAAgAmVO1bd7XjAd4nAAAgkAAAgEACACZTdd1e9biA2wQAAAQSAAAQSADARKqv2asfH/BKAABAoI+jDwA41+ev3+/+Nd/gIceHT1++/R59EMD7nh3Ojwb/yD8LGMMjAAiwdiAb4NCfAIDmtg5zEQC9CQCYwNaV/LNDfOvf798lgPoEADS11zd4mwDoya8AoLCZv0m/HLuAgJpsAKCoZ4b/3kP3mX/ezBEDndkAQDEdB6ZtANRjAwCFdBz+17q/PpiJDQAUkDQYbQOgBhsAGCxp+F9Lfd1QhQ0ADGIA2gbASDYAMIDh/5b3A87nfwYEJzpz0O35rXrW4wbuswGAk/iWu4z3Cc5hAwAHGznQ9vg2PfvxA7fZAMCBRn+bffbPn/34gftsAOAA1QbXlm/SHV4DcJ8NAOys2uC8XNYfU4fXADxmAwA7mWVAPfom3eE1AMsIANjBLIOzExEAzxEA8ASDfzwhANv4dwBgI8O/BucBtrEBgJUMnLpsA2A5GwBYwfCvzfmB5WwAYAGDZT62AfCYAIAHDP75CQG4zSMAuMPw78F5hNtsAOAPBkZftgHwygYArhj+vTm/8MoGAC4GQyLbANLZABDP8M/kvJPOBoBYBgAvbANIZANAJMOfa64HEtkAEMWNnvfYBpDCBoAYhj9LuE5IYQNAe27obGUbQGc2ALRm+PMM1w+d2QDQkhs3e7MNoBsbANox/DmC64pubABoww2as9gG0IENAC0Y/pzJ9UYHNgBMzY2Y0WwDmJUNANMy/KnAdcisbACYjhsuVdkGMBMBwDQMfmYhBJiBRwBMwfBnJq5XZmADQGlupMzONoCqbAAoy/CnA9cxVdkAUI4bJl3ZBlCJDQClGP505vqmEhsASnBjJI1tAKPZADCc4U8i1z2j2QAwjBsg/Ms2gBFsABjC8IdXPg+MYAPAqdzo4DHbAM5iA8BpDH94n88JZ7EB4HBuaLCNbQBHsgHgUIY/bOfzw5FsADiEGxfsyzaAvdkAsDvDH/bnc8XebADYjRsUnMM2gD3YALALwx/O4/PGHmwAeIobEYxlG8BWNgBsZvjDeD6HbGUDwGpuOFCTbQBrCAAWM/hhDkKAJTwCYBHDH+bh88oSNgA85EYCc7MN4B4bAO4y/GF+PsfcYwPAX9wwoCfbAK7ZAPCG4Q99+XxzzQaAy+XixgBpbAOwAcDwh0A+99gABHMDAC4X24BUNgChDH/ghftBJhuAMD7owCO2ATlsAIIY/sB73Cdy2AAE8IEGtrAN6M0GoDnDH9jK/aM3G4CmfHCBPdkG9GMD0JDhD+zNfaUfG4BGfECBM9gG9GAD0IThD5zF/aYHG4DJ+SACI9kGzMsGAAACCQAACCQAACCQAACAQAIAAAIJAAAIJAAAIJAAAIBAAgAAAgkAAAgkAAAgkAAAgEACAAACCQAACCQAACCQAACAQAIAAAIJAAAIJAAAIJAAAIBAH0cfAHT0+ev3h3/9188fJx3JPLxncC4BACu9N6g4xpL3XSTAcgIA/mOwz2/pORQKIAAIUW24f/763RC6cvb5sU0AAUAD1YY7PYgEuhMAlGa4U5lIYGYCgGEMdxKIBKoSABzCcIflRAIjCABWMdhhDL9wYG8CgP8z3GF+tgksJQBCGO7AC5HA5SIAWjDc5+S/BfAv129NIqE//zOgybl5AqO4/8xNAABAIAEAAIEEAAAEEgAAEEgAAEAgAQAAgQQADJT+M6r01w8jCQAACCQAACCQAACAQAIAAAIJAAAIJAAAIJAAAIBAAgAGS/0tfOrrhioEAAAEEgAAEEgAAEAgAQAAgQQAAAQSAAAQSAAAQCABAAWk/SY+7fVCRQIAAAIJAAAIJAAAIJAAAIBAAgAAAgkAAAgkAAAgkACAIlJ+G5/yOqE6AQAAgQQAAAQSAAAQSAAAQCABAACBBAAABBIAABBIAEAh3X8j3/31wUwEAAAEEgAAEEgAAEAgAQAAgQQAAAQSAAAQSAAAQCABAMV0/a1819cFsxIAABBIAABAIAEAAIEEAAAEEgAAEEgAAEAgAQAAgQQAFNTtN/PdXg90IAAAIJAAAIBAAgAAAgkAAAgkAAAgkAAAgEACAAACCQAoqstv57u8DuhGAABAIAEAAIEEAAAEEgAAEEgAQFG/fv4YfQi76PI6oJsPn758+z36IIBXnQemXwRAHTYAUEjn4X+59H99MBMbACggcTDaBsBYNgAwWOLwv1xyXzdUIQBgoPQhmP76YSSPAGAAg+9vHgnAuWwA4GSG/23eFziXDQCcxIBbzjYAjmcDACcw/NfxfsHxBAAczDDbxvsGx/IIAA5igO3HIwHYnw0AHMDw35f3E/ZnAwA7MqiOZxsA+7ABgJ0Y/ufwPsM+BADswFA6l/cbnucRADzBIBrPIwHYxgYANjL8a3AeYBsbAFjJwKnLNgCWswGAFQz/2pwfWE4AwEKGyxycJ1jGIwB4h4EyL48E4D4bAHjA8J+b8wf32QDADQZHP7YB8JYNAPzB8O/JeYW3BABcMSR6c37hlUcAcDEYEnkkQDobAOIZ/pmcd9LZABDLAOCFbQCJbACIZPhzzfVAIgFAHDd7bnFdkMYjAGK4wbOURwIksAEgguHPGq4XEtgA0JobOc+yDaArGwDaMvzZg+uIrgQALblpsyfXEx15BEArbtQczSMBurABoA3DnzO4zujCBoDpuSEzim0AM7MBYGqGPyO5/piZDQDTcvN9zvW3V+/lc2wCmJEAYDqG1XZLBpX3dzshwEwEAFMxnLbZMpi819uIAGYhAJiCYbTenoPI+7+eEKA6AUB5hs86Rw4e52IdEUBlAoDSDJxlRgwa52YZEUBVAoCSDJdlKgwX52qZCucKrgkAyjFQHqs8SJy7xyqfO/IIAMowPB6baXg4l4/NdC7pSwBQgoFxW4dB4dze1uHcMrePow8A+Fun4fDyWoQA1CIAoIhOQ/8W/+lhqEUAwGDdB/8ttgIwngCAARKH/i22AjCOAIATGfz32QrAuQQAHMzQX8dWAM4hAOAgBv/zbAXgOAIAdmToH8NWAPYnAGAHBv95bAVgHwIAnmDwjyME4DkCAFYy9GvxeAC2EQCwkMFfn60ALCcA4AFDf062AvA+AQA3GPx92ArAbQIA/mPo92YrAG8JAOIZ/HlsBUAAEMrQ53KxFSCbACCKwc89tgKkEQC0Z+izhq0AKQQAbRn8PMtWgM4EAK0Y+hzBVoCOBAAtGPycxVaALgQA0zL0GclWgNkJAKZj8FONrQAzEgBMwdBnBrYCzEQAUJrBz6xsBahOAFCOoU8ntgJUJQAow+CnO1sBKvnw6cu336MPAgA41z+jDwAAOJ8AAIBAAgAAAgkAAAgkAAAgkAAAgEACAAACCQAACCQAACCQAACAQAIAAAIJAAAIJAAAIJAAAIBAAgAAAgkAAAgkAAAgkAAAgEACAAACCQAACCQAACCQAACAQAIAAAIJAAAIJAAAIJAAAIBAAgAAAgkAAAgkAAAgkAAAgEACAAACCQAACCQAACCQAACAQAIAAAIJAAAIJAAAIJAAAIBAAgAAAgkAAAgkAAAgkAAAgEACAAACCQAACCQAACCQAACAQAIAAAIJAAAIJAAAIJAAAIBAAgAAAgkAAAgkAAAgkAAAgEACAAACCQAACCQAACCQAACAQAIAAAIJAAAIJAAAIJAAAIBAAgAAAgkAAAgkAAAgkAAAgEACAAACCQAACCQAACCQAACAQAIAAAIJAAAIJAAAIJAAAIBAAgAAAgkAAAgkAAAgkAAAgEACAAACCQAACCQAACCQAACAQAIAAAIJAAAIJAAAIJAAAIBAAgAAAgkAAAgkAAAgkAAAgEACAAACCQAACCQAACCQAACAQAIAAAIJAAAIJAAAIJAAAIBAAgAAAgkAAAgkAAAgkAAAgED/A2QJv6AAo26zAAAAAElFTkSuQmCC", sizes: "512x512", type: "image/png", purpose: "any" }
+    ]
+  };
+  const link = document.createElement("link");
+  link.rel = "manifest";
+  link.href = URL.createObjectURL(new Blob([JSON.stringify(manifest)], { type: "application/manifest+json" }));
+  document.head.appendChild(link);
+})();
+let qTimer = 0;
+document.getElementById("q").addEventListener("input", e => {
+  state.q = e.target.value.trim();
+  if (qTimer) clearTimeout(qTimer);
+  qTimer = setTimeout(() => { qTimer = 0; render(); }, 160);
+});
+document.getElementById("q").addEventListener("keydown", e => { if (e.key === "Enter") e.preventDefault(); });
+
+document.getElementById("btn-refresh").addEventListener("click", () => { if (!isAuthed()) return; startTimer(); loadLive(); });
+document.addEventListener("visibilitychange", onVisibility);
+window.addEventListener("pageshow", onVisibility);
+window.addEventListener("focus", maybeRefresh);
+["pointerdown", "keydown", "touchstart", "scroll", "wheel"].forEach(ev => {
+  document.addEventListener(ev, markUserActivity, { passive: true });
+});
+document.getElementById("btn-save-myorder").addEventListener("click", () => {
+  if (!selected.size) return;
+  setMyOrderFromPicks();
+  selected.clear();
+  if (!selected.size) state.onlyPicked = false;
+  state.myOrderOn = hasMyOrderData();
+  savePicks();
+  saveMyOrder();
+  pushServerMyOrder();
+  render();
+});
+document.getElementById("btn-clear-myorder").addEventListener("click", () => {
+  resetMyOrder(false);
+  saveMyOrder();
+  authFetch("/api/myorder", { method: "DELETE" }).catch(() => {});
+  render();
+});
+document.getElementById("btn-clear-picks").addEventListener("click", () => {
+  if (!selected.size) return;
+  removeSelectedFlights();
+  savePicks();
+  saveMyOrder();
+  pushServerMyOrder();
+  render();
+});
+
+document.querySelectorAll("[data-escort-act]").forEach(el => {
+  el.addEventListener("click", () => {
+    onEscortAction(el.getAttribute("data-escort-act"), el.getAttribute("data-dir"));
+  });
+});
+const CF_BOARD = "https://hkg-flight-board-55m.pages.dev";
+if (/\.netlify\.app$/i.test(location.hostname)) {
+  location.replace(CF_BOARD + location.search + location.hash);
+}
+
+
+function escortActionOf(job) {
+  const a = String((job && job.action) || "").toLowerCase().replace(/-/g, "_");
+  if (a === "go" || a === "sby" || a === "signed" || a === "no_sup" || a === "go_vcc" || a === "done") return a;
+  const text = String((job && (job.text || job.body)) || "");
+  if (/No Sup and all correct/i.test(text)) return "no_sup";
+  if (/GO VCC/.test(text)) return "go_vcc";
+  if (/^SBY\s/m.test(text)) return "sby";
+  if (/\sSigned\s*$/m.test(text)) return "signed";
+  if (/\sGO\s*$/m.test(text)) return "go";
+  return "done";
+}
+function lastTwoLetters(raw) {
+  const letters = String(raw || "").toUpperCase().replace(/[^A-Z]/g, "");
+  return letters.length >= 2 ? letters.slice(-2) : "";
+}
+function selectedDirFlights(dir) {
+  const out = [];
+  const seen = new Set();
+  ROWS.filter(r => r && r.dir === dir && selected.has(rowKey(r))).sort(rowSort).forEach(r => {
+    const flight = String(r.flight || "").replace(/\s+/g, "").toUpperCase();
+    if (!flight) return;
+    const ymd = dutyYmd(r);
+    const key = (ymd || "") + "|" + dir + "|" + flight;
+    if (seen.has(key)) return;
+    seen.add(key);
+    const standRaw = primaryStand(r.st);
+    const stand = (standRaw && standRaw !== "—" && standRaw !== "-") ? standRaw : "";
+    out.push({ flight, ymd, dir, reg: lastTwoLetters(r.reg), stand });
+  });
+  return out;
+}
+let escortFillPending = [];
+let escortFillKind = "";
+function openEscortFillModal(kind, flights) {
+  escortFillKind = kind;
+  escortFillPending = flights.slice();
+  const title = document.getElementById("done-reg-title");
+  const note = document.getElementById("done-reg-note");
+  const list = document.getElementById("done-reg-list");
+  const err = document.getElementById("done-reg-err");
+  err.textContent = "";
+  const isStand = kind === "stand";
+  if (title) title.textContent = isStand ? "補填停機位" : "補填機身編號";
+  if (note) note.textContent = isStand
+    ? "呢班入口航班未有停機位，請輸入 2 或 3 位數字。"
+    : "呢班離港航班未有 AC/REG，請輸入最後兩個英文字，例如 ID。";
+  const rows = isStand ? flights.filter(f => !f.stand) : flights;
+  list.innerHTML = rows.map((f, i) => {
+    const val = isStand ? "" : (f.reg ? esc(f.reg) : "");
+    const max = isStand ? 3 : 2;
+    const mode = isStand ? "numeric" : "text";
+    const label = isStand ? "停機位" : "最後兩個英文字";
+    return `<div class="reg-row"><span class="flight">${esc(f.flight)}</span>` +
+      `<input class="done-reg-input" data-i="${i}" data-flight="${esc(f.flight)}" type="text" maxlength="${max}" inputmode="${mode}" autocomplete="off" spellcheck="false" value="${val}" aria-label="${esc(f.flight)} ${label}"></div>`;
+  }).join("");
+  document.getElementById("pw-form").hidden = true;
+  document.getElementById("stats-card").hidden = true;
+  document.getElementById("done-reg-card").hidden = false;
+  document.getElementById("modal-mask").classList.add("open");
+  const firstEmpty = list.querySelector(".done-reg-input:not([value]), .done-reg-input[value='']") || list.querySelector(".done-reg-input");
+  if (firstEmpty) firstEmpty.focus();
+  list.querySelectorAll(".done-reg-input").forEach(inp => {
+    inp.addEventListener("input", () => {
+      if (isStand) inp.value = inp.value.replace(/\D/g, "").slice(0, 3);
+      else inp.value = inp.value.toUpperCase().replace(/[^A-Z]/g, "").slice(0, 2);
+    });
+  });
+}
+let doneToastTimer = 0;
+function showDoneToast(msg, isErr) {
+  const el = document.getElementById("done-toast");
+  if (!el) return;
+  el.textContent = msg;
+  el.classList.toggle("err", !!isErr);
+  el.classList.add("show");
+  clearTimeout(doneToastTimer);
+  doneToastTimer = setTimeout(() => el.classList.remove("show"), isErr ? 8000 : 5000);
+}
+let doneSending = false;
+let lastEscortSig = "";
+let lastEscortAt = 0;
+function escortSig(action, flights) {
+  return action + ":" + flights.map(f => (f.ymd || "") + "|" + (f.dir || "") + "|" + f.flight).join(",");
+}
+function setEscortButtonsDisabled(on) {
+  document.querySelectorAll("[data-escort-act]").forEach(el => { el.disabled = !!on; });
+}
+const escortLocks = new Set();
+function lockActionOf(action) {
+  const a = String(action || "").toLowerCase();
+  if (a === "signed" || a === "no_sup") return "signed_or_no_sup";
+  return a;
+}
+function escortLockKey(f, action) {
+  const ymd = (f && (f.ymd || f.date)) || "";
+  const dir = (f && f.dir) || "";
+  const fk = flightKey((f && f.flight) || "");
+  return ymd + "|" + dir + "|" + fk + "|" + lockActionOf(action);
+}
+function flightIsLocked(f, action) {
+  if (!f || action === "done") return false;
+  return escortLocks.has(escortLockKey(f, action));
+}
+function rememberEscortLocks(action, flights) {
+  if (action === "done") return;
+  (flights || []).forEach(f => {
+    if (f) escortLocks.add(escortLockKey(f, action));
+  });
+}
+function unlockEscortLocks(action, flights) {
+  if (action === "done") return;
+  (flights || []).forEach(f => {
+    if (f) escortLocks.delete(escortLockKey(f, action));
+  });
+}
+function applyEscortLocksFromJobs(jobs) {
+  escortLocks.clear();
+  (jobs || []).forEach(job => {
+    const status = String((job && job.status) || "").toLowerCase();
+    if (status !== "pending" && status !== "sending" && status !== "sent") return;
+    const act = escortActionOf(job);
+    if (act === "done") return;
+    rememberEscortLocks(act, job.flights || []);
+  });
+}
+function unlockedDirFlights(action, dir) {
+  const all = selectedDirFlights(dir);
+  if (action === "done") return all;
+  return all.filter(f => !flightIsLocked(f, action));
+}
+function syncEscortButtons() {
+  document.querySelectorAll("[data-escort-act]").forEach(el => {
+    if (doneSending) {
+      el.disabled = true;
+      return;
+    }
+    const action = el.getAttribute("data-escort-act");
+    const dir = el.getAttribute("data-dir");
+    if (action === "done") {
+      el.disabled = false;
+      return;
+    }
+    el.disabled = !unlockedDirFlights(action, dir).length;
+  });
+}
+async function waitDoneJob(id) {
+  const t0 = Date.now();
+  await new Promise(r => setTimeout(r, 300));
+  while (Date.now() - t0 < 30000) {
+    const { data } = await authFetch("/api/done?id=" + encodeURIComponent(id));
+    if (data && data.status === "sent") return data;
+    if (data && data.status === "error") throw new Error(data.error || "發出失敗");
+    await new Promise(r => setTimeout(r, 800));
+  }
+  return { status: "pending" };
+}
+async function submitEscortSend(action, flights) {
+  if (doneSending) return;
+  if (action !== "done") {
+    flights = (flights || []).filter(f => !flightIsLocked(f, action));
+    if (!flights.length) {
+      showDoneToast("所選航班已經交過呢個動作。", true);
+      syncEscortButtons();
+      return;
+    }
+  }
+  const sig = escortSig(action, flights);
+  if (sig === lastEscortSig && Date.now() - lastEscortAt < 20000) {
+    showDoneToast("已交出去，大約幾秒內會出現喺 Escort。");
+    return;
+  }
+  doneSending = true;
+  setEscortButtonsDisabled(true);
+  showDoneToast("正在覆去 Escort…");
+  let jobId = null;
+  let accepted = flights;
+  try {
+    const { res, data } = await authFetch("/api/done", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ action, flights })
+    });
+    if (!res.ok || !data || !data.id) {
+      throw new Error((data && data.error) || "未能發出");
+    }
+    jobId = data.id;
+    if (data.flights && data.flights.length) accepted = data.flights;
+    rememberEscortLocks(action, accepted);
+    lastEscortSig = sig;
+    lastEscortAt = Date.now();
+    showDoneToast("已交出去，大約幾秒內會出現喺 Escort。");
+  } catch (e) {
+    showDoneToast((e && e.message) || "發出失敗", true);
+    return;
+  } finally {
+    doneSending = false;
+    syncEscortButtons();
+  }
+  if (!jobId) return;
+  try {
+    const result = await waitDoneJob(jobId);
+    if (result.status === "sent") {
+      if (action === "done") {
+        const doneFlights = (result.flights && result.flights.length) ? result.flights : accepted;
+        const days = rememberDoneFlights(doneFlights);
+        await persistPrunedMyOrder(days);
+        await pullServerMyOrder();
+        render();
+      }
+      showDoneToast("已覆去 Escort。");
+    }
+  } catch (e) {
+    unlockEscortLocks(action, accepted);
+    syncEscortButtons();
+    showDoneToast((e && e.message) || "發出失敗", true);
+  }
+}
+async function onEscortAction(action, dir) {
+  if (doneSending) return;
+  const selectedFlights = selectedDirFlights(dir);
+  if (!selectedFlights.length) {
+    showDoneToast(dir === "dep" ? "請先剔離港航班。" : "請先剔入口航班。", true);
+    return;
+  }
+  const flights = action === "done" ? selectedFlights : selectedFlights.filter(f => !flightIsLocked(f, action));
+  if (!flights.length) {
+    showDoneToast("所選航班已經交過呢個動作。", true);
+    syncEscortButtons();
+    return;
+  }
+  if (action === "done" && dir === "dep" && flights.some(f => !f.reg)) {
+    openEscortFillModal("reg", flights);
+    return;
+  }
+  if (action === "sby" && flights.some(f => !f.stand)) {
+    openEscortFillModal("stand", flights);
+    return;
+  }
+  await submitEscortSend(action, flights);
+}
+
+
+
+const EVS = ["989", "987", "985", "981", "978", "977"];
+const KEYS = ["1", "2", "3", "4", "5", "NA"];
+let evHeld = "";
+let keyHeld = "";
+let evkeyBusy = false;
+
+function evkeyValue(id) {
+  const el = document.getElementById(id);
+  if (!el || el.selectedIndex < 0) return "";
+  return String(el.value || "");
+}
+function evkeyFace(id) {
+  const val = evkeyValue(id);
+  const btn = document.getElementById(id + "-btn");
+  if (!btn) return;
+  const lab = id === "myev" ? "MyEV" : "MyKey";
+  if (!val) {
+    btn.className = "picker-btn is-empty";
+    btn.innerHTML = '<span class="picker-lab">' + lab + "</span>";
+  } else {
+    btn.className = "picker-btn";
+    btn.innerHTML = '<span class="picker-lab">' + lab + '</span><span class="picker-val">' + val + "</span>";
+  }
+}
+function fillEvKeyOptions(id, list) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const kept = evkeyValue(id);
+  el.innerHTML = list.map(v => '<option value="' + v + '">' + v + "</option>").join("");
+  if (kept && list.indexOf(kept) >= 0) el.value = kept;
+  else el.selectedIndex = -1;
+  evkeyFace(id);
+}
+function evkeyReady() {
+  const ev = evkeyValue("myev");
+  const key = evkeyValue("mykey");
+  evkeyFace("myev");
+  evkeyFace("mykey");
+  const btn = document.getElementById("btn-confirm");
+  if (btn) btn.disabled = evkeyBusy || !ev || !key;
+  return ev && key ? { ev, key } : null;
+}
+function clearEvKeyPicks() {
+  const ev = document.getElementById("myev");
+  const key = document.getElementById("mykey");
+  if (ev) ev.selectedIndex = -1;
+  if (key) key.selectedIndex = -1;
+  evHeld = "";
+  keyHeld = "";
+  evkeyReady();
+}
+async function pullEvKey() {
+  try {
+    const { res, data } = await authFetch("/api/evkey");
+    if (!res.ok || !data) return;
+    const mine = data.mine || {};
+    const ev = String(mine.ev || "");
+    const key = String(mine.key || "");
+    if (evHeld && evHeld !== ev && evkeyValue("myev") === evHeld) {
+      document.getElementById("myev").selectedIndex = -1;
+    }
+    if (keyHeld && keyHeld !== key && evkeyValue("mykey") === keyHeld) {
+      document.getElementById("mykey").selectedIndex = -1;
+    }
+    evHeld = ev;
+    keyHeld = key;
+    if (ev && evkeyValue("myev") === "") document.getElementById("myev").value = ev;
+    if (key && evkeyValue("mykey") === "") document.getElementById("mykey").value = key;
+    evkeyReady();
+  } catch (e) {}
+}
+async function confirmEvKey() {
+  const v = evkeyReady();
+  if (!v || evkeyBusy || doneSending) return;
+  evkeyBusy = true;
+  evkeyReady();
+  showDoneToast("正在覆去 Escort…");
+  let jobId = null;
+  try {
+    const { res, data } = await authFetch("/api/evkey", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ ev: v.ev, key: v.key })
+    });
+    if (!res.ok || !data || !data.id) throw new Error((data && data.error) || "未能發出");
+    evHeld = v.ev;
+    keyHeld = v.key;
+    jobId = data.id;
+    showDoneToast("已交出去，大約幾秒內會出現喺 Escort。");
+  } catch (e) {
+    showDoneToast((e && e.message) || "發出失敗", true);
+    evkeyBusy = false;
+    evkeyReady();
+    return;
+  }
+  evkeyBusy = false;
+  evkeyReady();
+  if (!jobId) return;
+  try {
+    const result = await waitDoneJob(jobId);
+    if (result.status === "sent") showDoneToast("已覆去 Escort。");
+  } catch (e) {
+    showDoneToast((e && e.message) || "發出失敗", true);
+  }
+}
+
+fillEvKeyOptions("myev", EVS);
+fillEvKeyOptions("mykey", KEYS);
+evkeyReady();
+document.getElementById("myev").addEventListener("change", evkeyReady);
+document.getElementById("mykey").addEventListener("change", evkeyReady);
+document.getElementById("btn-confirm").addEventListener("click", () => { confirmEvKey(); });
+
+async function authFetch(url, opts) {
+  const res = await fetch(url, { credentials: "same-origin", ...opts });
+  let data = null;
+  try { data = await res.json(); } catch {}
+  const path = String(url || "");
+  if (res.status === 401 && isAuthed() && !/\/api\/auth\/login(?:\?|$)/.test(path)) {
+    onAuthExpired();
+  }
+  return { res, data };
+}
+
+function fmtOpenTime(iso) {
+  if (!iso) return "—";
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return "—";
+  const parts = new Intl.DateTimeFormat("en-GB", {
+    timeZone: "Asia/Hong_Kong",
+    year: "numeric", month: "2-digit", day: "2-digit",
+    hour: "2-digit", minute: "2-digit", hour12: false
+  }).formatToParts(d);
+  const g = k => (parts.find(p => p.type === k) || {}).value;
+  return `${g("year")}-${g("month")}-${g("day")} ${g("hour")}:${g("minute")} 香港時間`;
+}
+
+function closeModal() {
+  document.getElementById("modal-mask").classList.remove("open");
+  document.getElementById("pw-form").hidden = true;
+  document.getElementById("stats-card").hidden = true;
+  const regCard = document.getElementById("done-reg-card");
+  if (regCard) regCard.hidden = true;
+}
+
+function showLoggedIn(user) {
+  document.body.classList.remove("login");
+  document.body.classList.add("authed");
+  document.getElementById("user-bar").hidden = false;
+  document.getElementById("user-label").textContent = "職員 " + user.staff_id;
+  document.getElementById("btn-stats").hidden = !user.is_admin;
+}
+
+function showLogin(msg) {
+  stopBoard();
+  document.body.classList.remove("authed");
+  document.body.classList.add("login");
+  document.getElementById("user-bar").hidden = true;
+  const err = document.getElementById("login-err");
+  if (err) err.textContent = msg || "";
+}
+
+async function recordOpen() {
+  try { await authFetch("/api/auth/open", { method: "POST" }); } catch {}
+}
+
+async function startBoard() {
+  restoreRowCache();
+  if (ROWS.length) ROWS = applyPlanOverrides(finalizeRegs(foldDayDelays(ROWS), fr24RegMap));
+  render();
+  startIdleWatch();
+  startTimer();
+  pullEvKey();
+  if (document.visibilityState !== "hidden") loadLive();
+}
+
+document.getElementById("login-form").addEventListener("submit", async e => {
+  e.preventDefault();
+  const err = document.getElementById("login-err");
+  err.textContent = "";
+  const staff_id = document.getElementById("login-id").value.trim();
+  const password = document.getElementById("login-pw").value;
+  const stay = document.getElementById("login-stay").checked;
+  const { res, data } = await authFetch("/api/auth/login", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ staff_id, password, stay })
+  });
+  if (!res.ok || !data || !data.user) {
+    err.textContent = (data && data.error) || "登入失敗";
+    return;
+  }
+  showLoggedIn(data.user);
+  await pullServerMyOrder();
+  startBoard();
+  recordOpen();
+});
+
+document.getElementById("btn-logout").addEventListener("click", () => { logoutClient(""); });
+
+document.getElementById("btn-pw").addEventListener("click", () => {
+  document.getElementById("pw-err").textContent = "";
+  document.getElementById("pw-ok").textContent = "";
+  document.getElementById("pw-form").reset();
+  document.getElementById("pw-form").hidden = false;
+  document.getElementById("stats-card").hidden = true;
+  const hideReg1 = document.getElementById("done-reg-card"); if (hideReg1) hideReg1.hidden = true;
+  document.getElementById("modal-mask").classList.add("open");
+});
+
+document.getElementById("pw-cancel").addEventListener("click", closeModal);
+document.getElementById("stats-close").addEventListener("click", closeModal);
+document.getElementById("done-reg-cancel").addEventListener("click", closeModal);
+document.getElementById("done-reg-card").addEventListener("submit", async e => {
+  e.preventDefault();
+  const err = document.getElementById("done-reg-err");
+  err.textContent = "";
+  const kind = escortFillKind;
+  const pending = escortFillPending.slice();
+  const inputs = [...document.querySelectorAll("#done-reg-list .done-reg-input")];
+  if (!pending.length || !kind) {
+    err.textContent = "請重新剔航班後再試。";
+    return;
+  }
+  let flights;
+  if (kind === "stand") {
+    const need = pending.filter(f => !f.stand);
+    if (inputs.length !== need.length) {
+      err.textContent = "請重新剔入口航班後再試。";
+      return;
+    }
+    const typed = new Map();
+    for (let i = 0; i < need.length; i++) {
+      const stand = String(inputs[i].value || "").replace(/\D/g, "");
+      if (!/^\d{2,3}$/.test(stand)) {
+        err.textContent = need[i].flight + " 要填 2 或 3 位數字。";
+        inputs[i].focus();
+        return;
+      }
+      typed.set(need[i].flight, stand);
+    }
+    flights = pending.map(f => Object.assign({}, f, { stand: f.stand || typed.get(f.flight) }));
+    if (flights.some(f => !f.stand)) {
+      err.textContent = "請填晒停機位。";
+      return;
+    }
+    escortFillPending = [];
+    escortFillKind = "";
+    closeModal();
+    await submitEscortSend("sby", flights);
+    return;
+  }
+  if (inputs.length !== pending.length) {
+    err.textContent = "請重新剔離港航班後再試。";
+    return;
+  }
+  flights = [];
+  for (let i = 0; i < pending.length; i++) {
+    const letters = lastTwoLetters(inputs[i].value);
+    if (letters.length !== 2) {
+      err.textContent = pending[i].flight + " 要填兩個英文字。";
+      inputs[i].focus();
+      return;
+    }
+    flights.push(Object.assign({}, pending[i], { reg: letters }));
+  }
+  escortFillPending = [];
+  escortFillKind = "";
+  closeModal();
+  await submitEscortSend("done", flights);
+});
+document.getElementById("modal-mask").addEventListener("click", e => {
+  if (e.target.id === "modal-mask") closeModal();
+});
+
+document.getElementById("pw-form").addEventListener("submit", async e => {
+  e.preventDefault();
+  const err = document.getElementById("pw-err");
+  const ok = document.getElementById("pw-ok");
+  err.textContent = "";
+  ok.textContent = "";
+  const old_password = document.getElementById("pw-old").value;
+  const new_password = document.getElementById("pw-new").value;
+  const again = document.getElementById("pw-new2").value;
+  if (new_password !== again) {
+    err.textContent = "兩次新密碼唔一致";
+    return;
+  }
+  const { res, data } = await authFetch("/api/auth/change-password", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ old_password, new_password })
+  });
+  if (!res.ok) {
+    err.textContent = (data && data.error) || "改密碼失敗";
+    return;
+  }
+  ok.textContent = "已更新，已保持登入";
+  document.getElementById("pw-old").value = "";
+  document.getElementById("pw-new").value = "";
+  document.getElementById("pw-new2").value = "";
+});
+
+document.getElementById("btn-stats").addEventListener("click", async () => {
+  document.getElementById("pw-form").hidden = true;
+  document.getElementById("stats-card").hidden = false;
+  document.getElementById("modal-mask").classList.add("open");
+  const box = document.getElementById("stats-box");
+  box.textContent = "載入中…";
+  const { res, data } = await authFetch("/api/auth/stats");
+  if (!res.ok) {
+    box.textContent = (data && data.error) || "未能載入";
+    return;
+  }
+  const rows = (data && data.rows) || [];
+  if (!rows.length) {
+    box.innerHTML = '<div class="empty">未有開板紀錄</div>';
+    return;
+  }
+  const body = rows.map(r => `<tr><td>${esc(r.staff_id)}</td><td>${Number(r.opens) || 0}</td><td>${esc(fmtOpenTime(r.last_opened_at))}</td></tr>`).join("");
+  box.innerHTML = `<table class="stats-table"><thead><tr><th>職員編號</th><th>開板次數</th><th>最近一次</th></tr></thead><tbody>${body}</tbody></table>`;
+});
+
+async function bootAuth() {
+  if (/\.netlify\.app$/i.test(location.hostname)) return;
+  const { res, data } = await authFetch("/api/auth/me");
+  if (res.ok && data && data.user) {
+    showLoggedIn(data.user);
+    await pullServerMyOrder();
+    startBoard();
+    recordOpen();
+    return;
+  }
+  if (res.status === 401) {
+    try { await authFetch("/api/auth/logout", { method: "POST" }); } catch {}
+  }
+  showLogin("");
+}
+
+
+bootAuth();
+</script>
+
+<script>
+(function initEsuExport() {
+  function setup() {
+    // --- ESU Excel Export & Escort Action Timestamps ---
+    const ESCORT_TS_STORE = "hkg_fb_escort_ts_v1";
+    let escortTimestamps = {};
+    try { escortTimestamps = JSON.parse(localStorage.getItem(ESCORT_TS_STORE) || "{}"); } catch (e) {}
+    const fmtHkHm = d => new Intl.DateTimeFormat("en-GB", { timeZone: "Asia/Hong_Kong", hour: "2-digit", minute: "2-digit", hour12: false }).format(d || new Date());
+    const recordTs = (act, flts, iso) => {
+      const hm = fmtHkHm(iso ? new Date(iso) : new Date());
+      (flts || []).forEach(f => {
+        const y = typeof orderYmd === "function" ? (orderYmd(f.ymd || f.date) || (typeof hkYmd === "function" ? hkYmd(0) : "")) : (f.ymd || f.date || "");
+        const fk = typeof flightKey === "function" ? flightKey(f.flight) : String(f.flight || "").replace(/\s+/g, "").toUpperCase();
+        const k = y + "|" + (f.dir || "") + "|" + fk;
+        if (f.flight && f.dir) { (escortTimestamps[k] = escortTimestamps[k] || {})[act] = escortTimestamps[k][act] || hm; }
+      });
+      try { localStorage.setItem(ESCORT_TS_STORE, JSON.stringify(escortTimestamps)); } catch (e) {}
+    };
+    const getTs = (r, act) => {
+      if (!r) return "";
+      const y = ((r.ymd || r.opYmd) || (typeof orderYmd === "function" && orderYmd(r.date)) || (typeof dutyYmd === "function" && dutyYmd(r)) || "");
+      const fk = typeof flightKey === "function" ? flightKey(r.flight) : String(r.flight || "").replace(/\s+/g, "").toUpperCase();
+      return (escortTimestamps[y + "|" + r.dir + "|" + fk] || {})[act] || "";
+    };
+
+    if (typeof submitEscortSend === "function" && !submitEscortSend._esuWrapped) {
+      const _origSend = submitEscortSend;
+      submitEscortSend = async function(act, flts) {
+        recordTs(act, flts);
+        return _origSend.apply(this, arguments);
+      };
+      submitEscortSend._esuWrapped = true;
+    }
+
+    const tCell = s => {
+      const hm = typeof parseHms === "function" ? parseHms(s) : null;
+      return hm ? { v: (hm.h * 60 + hm.m) / 1440, t: "n", z: "hh:mm" } : { v: "N/A", t: "s" };
+    };
+    const vNA = v => (!v || v === "—" || v === "-") ? "N/A" : String(v).trim();
+
+    const btn = document.getElementById("btn-export-esu");
+    if (!btn || btn.dataset.esuBound) return;
+    btn.dataset.esuBound = "1";
+
+    btn.addEventListener("click", () => {
+      if (typeof XLSX === "undefined") {
+        if (typeof showDoneToast === "function") showDoneToast("Excel 元件載入中，請稍後再試。", true);
+        return;
+      }
+      const vis = (typeof ROWS !== "undefined" ? ROWS : []).filter(r => typeof pass === "function" ? pass(r) : true).sort(typeof rowSort === "function" ? rowSort : undefined);
+      const arrs = vis.filter(r => r.dir === "arr"), deps = vis.filter(r => r.dir === "dep"), used = new Set(), pairs = [];
+      arrs.forEach(a => {
+        let idx = deps.findIndex((d, i) => !used.has(i) && flightKey(d.flight) === flightKey(a.flight));
+        if (idx < 0 && primaryStand(a.st)) idx = deps.findIndex((d, i) => !used.has(i) && primaryStand(d.st) === primaryStand(a.st));
+        if (idx >= 0) { used.add(idx); pairs.push({ arr: a, dep: deps[idx] }); } else pairs.push({ arr: a, dep: null });
+      });
+      deps.forEach((d, i) => { if (!used.has(i)) pairs.push({ arr: null, dep: d }); });
+      if (!pairs.length) {
+        if (typeof showDoneToast === "function") showDoneToast("而家畫面暫時冇航班可以匯出。", true);
+        return;
+      }
+
+      const ymd = (typeof orderYmd === "function" && orderYmd(state.date)) || (typeof hkYmd === "function" ? hkYmd(0) : "");
+      const staff = (document.getElementById("user-label")?.textContent || "").replace(/^職員\s*/, "").trim();
+      const cols = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W"];
+      const hdrs = ["IMPORT FLT","EXPORT FLT","VAL receipt","STA / STD","ETA / ETD","ATA / ATD","BAY#","Expected Time arrived at VCC","Actual Time arrived at VCC","Standard Time of B/U completed","Actual Time of B/U completed","Standard Time Left VCC","Actual time Left VCC","Standard Handover Time at Parking Bay","Actual Handover Time at Parking Bay","Handling Staff","Loading","Standard Arrival to Bay","Actual Time of Arrival to Bay","Handover Time (IMP)","IMP Bay Start Time","Actual Finish Time","Remark / Reason"];
+      const ws = { "!ref": "A1:W" + (pairs.length + 1) };
+      hdrs.forEach((h, i) => ws[cols[i] + "1"] = { v: h, t: "s" });
+
+      pairs.forEach(({ arr, dep }, i) => {
+        const r = i + 2, fFormula = m => dep ? { t: "n", f: `IF($B${r}="","N/A",IF(ISNUMBER(E${r}),E${r}-(${m}/1440),"N/A"))`, z: "hh:mm" } : { v: "N/A", t: "s" };
+        const impBayStart = arr ? (getTs(arr, "vcc") || getTs(arr, "go_vcc") || getTs(arr, "go") || "") : "";
+        const vals = [
+          { v: arr ? arr.flight : "", t: "s" }, { v: dep ? dep.flight : "", t: "s" }, { v: "N/A", t: "s" },
+          tCell(dep ? dep.std : arr.std), tCell(dep ? (dep.etd || dep.std) : (arr.etd || arr.std)), tCell(dep ? dep.atd : arr.atd),
+          { v: vNA(primaryStand((dep && dep.st) || (arr && arr.st))), t: "s" }, { v: "N/A", t: "s" }, tCell(arr ? getTs(arr, "go_vcc") : ""),
+          fFormula(75), { v: "N/A", t: "s" }, fFormula(45), tCell(dep ? getTs(dep, "go") : ""), fFormula(30), tCell(dep ? getTs(dep, "done") : ""),
+          { v: staff || "N/A", t: "s" }, { v: vNA(((dep && orderInfoOf(dep)) || (arr && orderInfoOf(arr)) || "").replace(/\n+/g, " / ")), t: "s" },
+          tCell(arr ? arr.std : ""), tCell(arr ? getTs(arr, "sby") : ""), tCell(arr ? (getTs(arr, "signed") || getTs(arr, "no_sup")) : ""),
+          tCell(impBayStart), tCell((arr && getTs(arr, "done")) || (dep && getTs(dep, "done")) || ""), { v: "N/A", t: "s" }
+        ];
+        vals.forEach((cell, c) => ws[cols[c] + r] = cell);
+      });
+
+      const wb = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(wb, ws, "ESU_" + ymd);
+      XLSX.writeFile(wb, `ESU_Control_Sheet_${ymd}.xlsx`);
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", setup);
+  } else {
+    setup();
+  }
+  window.addEventListener("load", setup);
+})();
+</script>
+</body>
+</html>

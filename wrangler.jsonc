@@ -1,0 +1,15 @@
+{
+  "name": "hkg-flight-board",
+  "compatibility_date": "2026-11-12",
+  "pages_build_output_dir": ".",
+  "vars": {
+    "EXCEL_FEED_KEY": "REDACTED"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "hkg-flight-board-auth",
+      "database_id": "8cc076c3-d63b-4ef1-8ed4-10fed8cb364f"
+    }
+  ]
+}
